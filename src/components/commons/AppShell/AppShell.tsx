@@ -22,7 +22,7 @@ const AppShell = (props: PropsType) => {
       setToaster(defaultToaster);
     }, 3000);
     return () => clearTimeout(timeOut);
-  }, [toaster]);
+  }, [toaster, setToaster]);
   return (
     <main className={cn(inter.className)}>
       {children}

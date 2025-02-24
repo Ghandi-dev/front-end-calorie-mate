@@ -1,7 +1,6 @@
 import { DELAY, LIMIT_DEFAULT, PAGE_DEFAULT } from "@/constants/list.constants";
 import { useRouter } from "next/router";
 import useDebounce from "./useDebounce";
-import { useEffect } from "react";
 
 const useChangeUrl = () => {
   const router = useRouter();
