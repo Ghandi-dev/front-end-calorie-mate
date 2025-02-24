@@ -9,42 +9,38 @@ const Register = () => {
   const { visiblePassword, handleVisiblePassword, control, handleSubmit, handleRegister, isPendingRegister, errors } = useRegister();
 
   return (
-    <div className="hero w-100">
-      <div className="hero-content w-full max-w-full flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <Image src="/images/logo-with-text.png" alt="login" width={500} height={500} />
-        </div>
-        <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-8">
+    <div className="hero">
+      <div className="hero-content flex-col lg:flex-row-reverse p-0">
+        <Image src="/images/logo-with-text.png" alt="register" width={500} height={500} />
+        <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-xl">
           <form className={cn("flex flex-col card-body", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")} onSubmit={handleSubmit(handleRegister)}>
-            <h2 className="text-3xl font-bold text-danger-500 text-center">Create an account</h2>
-            <div className="flex flex-col lg:flex-row max-w-full gap-4">
-              <Controller
-                name="fullname"
-                control={control}
-                render={({ field }) => (
-                  <div className="form-control w-full">
-                    <label className="label">
-                      <span className="label-text">Fullname</span>
-                    </label>
-                    <input {...field} type="text" placeholder="Fullname" className="input input-bordered w-full" />
-                    {errors.fullname && <p className="text-error">{errors.fullname.message}</p>}
-                  </div>
-                )}
-              />
-              <Controller
-                name="username"
-                control={control}
-                render={({ field }) => (
-                  <div className="form-control w-full">
-                    <label className="label">
-                      <span className="label-text">Username</span>
-                    </label>
-                    <input {...field} type="text" placeholder="Username" className="input input-bordered w-full" />
-                    {errors.username && <p className="text-error">{errors.username.message}</p>}
-                  </div>
-                )}
-              />
-            </div>
+            <h2 className="text-3xl font-bold text-neutral text-center">Create an account</h2>
+            <Controller
+              name="fullname"
+              control={control}
+              render={({ field }) => (
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Fullname</span>
+                  </label>
+                  <input {...field} type="text" placeholder="Fullname" className="input input-bordered w-full" />
+                  {errors.fullname && <p className="text-error">{errors.fullname.message}</p>}
+                </div>
+              )}
+            />
+            <Controller
+              name="username"
+              control={control}
+              render={({ field }) => (
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Username</span>
+                  </label>
+                  <input {...field} type="text" placeholder="Username" className="input input-bordered w-full" />
+                  {errors.username && <p className="text-error">{errors.username.message}</p>}
+                </div>
+              )}
+            />
             <div className="flex flex-col lg:flex-row max-w-full gap-4">
               <Controller
                 name="gender"
@@ -143,7 +139,7 @@ const Register = () => {
               </button>
             </div>
             <div className="divider">
-              <p className="text-small">
+              <p className="text-sm">
                 Have an account?&nbsp;
                 <Link href="/auth/login" className="font-semibold text-primary">
                   Login here
