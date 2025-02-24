@@ -16,7 +16,7 @@ const Register = () => {
         </div>
         <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-8">
           <form className={cn("flex flex-col card-body", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")} onSubmit={handleSubmit(handleRegister)}>
-            <h2 className="text-3xl font-bold text-danger-500 text-center">Create an acount</h2>
+            <h2 className="text-3xl font-bold text-danger-500 text-center">Create an account</h2>
             <div className="flex flex-col lg:flex-row max-w-full gap-4">
               <Controller
                 name="fullname"
@@ -55,7 +55,7 @@ const Register = () => {
                     <label className="label">
                       <span className="label-text">Gender</span>
                     </label>
-                    <select {...field} className="select select-bordered">
+                    <select {...field} className="select select-bordered w-full">
                       <option disabled selected>
                         Select your gender
                       </option>
@@ -144,7 +144,7 @@ const Register = () => {
             </div>
             <div className="divider">
               <p className="text-small">
-                have an account?&nbsp;
+                Have an account?&nbsp;
                 <Link href="/auth/login" className="font-semibold text-primary">
                   Login here
                 </Link>

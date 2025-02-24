@@ -2,13 +2,11 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Explore", href: "/event" },
+  { label: "Calculate", href: "/calculate" },
+  { label: "Report", href: "/report" },
 ];
 
-const BUTTON_ITEMS = [
-  { label: "Register", href: "/auth/register", variant: "bordered" },
-  { label: "Login", href: "/auth/login", variant: "solid" },
-];
+const BUTTON_ITEMS = [{ label: "Login", href: "/auth/login", variant: "solid" }];
 
 const SOCIAL_ITEMS = [
   { label: "Facebook", href: "https://facebook.com", icon: <FaFacebook /> },
