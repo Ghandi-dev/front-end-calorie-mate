@@ -48,7 +48,7 @@ const Login = () => {
             />
             <div className="form-control mt-4">
               <button disabled={isPendingLogin} type="submit" className="btn btn-primary text-base-100 w-full">
-                {isPendingLogin ? <span className="loading loading-infinity loading-lg"></span> : "Register"}
+                {isPendingLogin ? <span className="loading loading-infinity loading-lg"></span> : "Login"}
               </button>
             </div>
             <div className="divider text-center">
