@@ -1,19 +1,7 @@
-import { useRouter } from "next/router";
 import Image from "next/image";
-// import { SIDEBAR_ITEMS } from "../MainLayout.constants";
-// import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
-import { MENU_ITEMS } from "../MainLayout.constants";
-import { cn } from "@/utils/cn";
-import { signOut } from "next-auth/react";
-import { BiSolidLogOut } from "react-icons/bi";
-
-// import useSidebarLayout from "../SidebarLayout.tsx/useSidebarLayout";
 
 const NavbarLayout = () => {
-  const router = useRouter();
-  // const { dataProfile, isLoadingProfile } = useSidebarLayout();
-
   // State untuk memastikan komponen sudah dimuat di client
   const [isMounted, setIsMounted] = useState(false);
 
@@ -40,18 +28,6 @@ const NavbarLayout = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="btm-nav lg:hidden">
-        {MENU_ITEMS.map((item, index) => (
-          <button key={`menu-btn-${index}`} className={cn("", { "active text-primary": router.pathname === item.href })}>
-            <span className="text-xl">{item.icon}</span>
-          </button>
-        ))}
-        <button className="text-error" onClick={() => signOut()}>
-          <span className="text-xl">
-            <BiSolidLogOut />
-          </span>
-        </button>
       </div>
     </Fragment>
   );

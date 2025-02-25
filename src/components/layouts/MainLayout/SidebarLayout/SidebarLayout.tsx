@@ -68,7 +68,7 @@ const SidebarLayout = () => {
       </nav>
 
       {/* Logout Button */}
-      <button onClick={() => signOut()} className="btn mt-auto bg-error text-white py-2 px-4 rounded-lg">
+      <button onClick={() => signOut({ callbackUrl: "/" })} className="btn mt-auto bg-error text-white py-2 px-4 rounded-lg">
         <BiSolidLogOut />
         Logout
       </button>

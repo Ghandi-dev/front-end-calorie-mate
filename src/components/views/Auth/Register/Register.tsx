@@ -75,7 +75,10 @@ const Register = () => {
                       type="date"
                       className="input input-bordered w-full"
                       value={field.value ? new Date(field.value).toISOString().split("T")[0] : ""}
-                      onChange={(e) => field.onChange(new Date(e.target.value))}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        field.onChange(value ? new Date(value) : null);
+                      }}
                     />
                     {errors.birthDate && <p className="text-error text-sm mt-1">{errors.birthDate.message}</p>}
                   </div>

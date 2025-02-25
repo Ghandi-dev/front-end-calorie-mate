@@ -2,6 +2,7 @@ import PageHead from "@/components/commons/PageHead";
 import SidebarLayout from "./SidebarLayout";
 import NavbarLayout from "./NabvarLayout";
 import { Fragment } from "react";
+import BottomMenuLayout from "./BottomMenuLayout";
 
 interface PropType {
   title?: string;
@@ -13,11 +14,19 @@ const MainLayout = (props: PropType) => {
   return (
     <Fragment>
       <PageHead title={title} />
-      <div className="flex min-h-screen bg-gray-100">
+      <div className="flex min-h-screen bg-base-200">
+        {/* Sidebar dengan tinggi penuh */}
         <SidebarLayout />
-        <main className="flex-1">
+
+        {/* Main content wrapper */}
+        <main className="flex flex-col flex-1 min-h-screen">
+          {/* Navbar di atas */}
           <NavbarLayout />
+
           {children}
+
+          {/* Bottom Menu di bawah */}
+          <BottomMenuLayout />
         </main>
       </div>
     </Fragment>

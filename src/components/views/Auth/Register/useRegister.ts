@@ -12,7 +12,7 @@ const registerSchema = yup.object().shape({
   fullname: yup.string().required("Full name is required"),
   username: yup.string().required("Username is required"),
   gender: yup.string().required("Gender is required"),
-  birthDate: yup.date().required("Birth date is required"),
+  birthDate: yup.mixed<Date | string>().required("Birth date is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup.string().min(8, "Password must be at least 8 characters").required("Password is required"),
   confirmPassword: yup
