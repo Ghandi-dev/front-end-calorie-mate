@@ -13,7 +13,7 @@ const BottomMenuLayout = () => {
           <span className="text-xl">{item.icon}</span>
         </button>
       ))}
-      <button className="text-error" onClick={() => signOut()}>
+      <button className="text-error" onClick={() => signOut({ callbackUrl: "/" })}>
         <span className="text-xl">
           <BiSolidLogOut />
         </span>

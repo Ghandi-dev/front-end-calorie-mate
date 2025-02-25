@@ -17,17 +17,8 @@ const Dashboard = () => {
             <h1 className="card-title text-2xl text-neutral">{dataProfile && greeting(dataProfile?.fullname)}</h1>
             <p className="text-sm">Here you can monitor your daily calorie intake and activities effortlessly, so you can stay fit and healthy every day.</p>
             <div className="flex flex-col lg:flex-row gap-4 mt-4">
-              {!isLoadingDailyLog && dataDailyLog ? (
-                <>
-                  <CardDaily type="food" data={dataDailyLog?.data[0]?.food} />
-                  <CardDaily type="activity" data={dataDailyLog?.data[0]?.activity} />
-                </>
-              ) : (
-                <>
-                  <CardDaily isLoading={isLoadingDailyLog} type="food" />
-                  <CardDaily isLoading={isLoadingDailyLog} type="activity" />
-                </>
-              )}
+              <CardDaily isAdd={false} type="food" data={dataDailyLog?.data[0]?.food} isLoading={isLoadingDailyLog} />
+              <CardDaily isAdd={false} type="activity" data={dataDailyLog?.data[0]?.activity} isLoading={isLoadingDailyLog} />
             </div>
             <div className="stats stats-vertical md:stats-horizontal shadow bg-base-100 mt-4">
               <div className="stat text-center lg:text-left">

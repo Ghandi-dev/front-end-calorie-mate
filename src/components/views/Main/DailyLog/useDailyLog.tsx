@@ -1,7 +1,7 @@
 import dailyLogServices from "@/services/dailyLog.service";
 import { useQuery } from "@tanstack/react-query";
 
-const useDashboard = () => {
+const useDailyLog = () => {
   const getDailyLog = async () => {
     const params = `date=${new Date().toISOString().split("T")[0]}`;
     const res = await dailyLogServices.getDailyLogByMember(params);
@@ -9,8 +9,12 @@ const useDashboard = () => {
     return data;
   };
 
-  const { data: dataDailyLog, isLoading: isLoadingDailyLog } = useQuery({
-    queryKey: ["dailyLogDashboard"],
+  const {
+    data: dataDailyLog,
+    isLoading: isLoadingDailyLog,
+    refetch: refecthDailyLog,
+  } = useQuery({
+    queryKey: ["dailyLog"],
     queryFn: getDailyLog,
     // enabled: router.isReady,
   });
@@ -18,7 +22,8 @@ const useDashboard = () => {
   return {
     dataDailyLog,
     isLoadingDailyLog,
+    refecthDailyLog,
   };
 };
 
-export default useDashboard;
+export default useDailyLog;

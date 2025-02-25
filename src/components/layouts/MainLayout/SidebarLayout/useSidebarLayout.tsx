@@ -9,6 +9,7 @@ const useSidebarLayout = () => {
     const { data } = await authServices.getProfile();
     return data.data;
   };
+
   const {
     data: dataProfile,
     refetch: refetchProfile,
