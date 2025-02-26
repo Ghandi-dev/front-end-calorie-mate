@@ -30,7 +30,11 @@ const DailyLog = () => {
         <div className="card glass w-full lg:w-1/2 ">
           <div className="card-body p-2 lg:p-8">
             <h1 className="font-bold text-2xl text-neutral text-center">Let{"'"}s track your progress today!</h1>
-            <DataPersonalCard data={dataDailyLog?.data[0]} openModal={openModal} isLoading={isLoadingDailyLog} />
+            {!isLoadingDailyLog ? (
+              <DataPersonalCard data={dataDailyLog?.data[0]} openModal={openModal} isLoading={isLoadingDailyLog} />
+            ) : (
+              <div className="skeleton min-h-[178px]"></div>
+            )}
             <div className="flex flex-col lg:flex-row gap-4 mt-4">
               {!isLoadingDailyLog ? (
                 <>
@@ -51,8 +55,8 @@ const DailyLog = () => {
                 </>
               ) : (
                 <>
-                  <CardDaily type="food" data={dataDailyLog?.data[0]?.food} isLoading={true} />
-                  <CardDaily type="activity" data={dataDailyLog?.data[0]?.activity} isLoading={true} />
+                  <CardDaily isLoading={true} />
+                  <CardDaily isLoading={true} />
                 </>
               )}
             </div>
@@ -61,11 +65,17 @@ const DailyLog = () => {
         <div className="card glass w-full lg:w-1/2">
           <div className="card-body p-2 lg:p-8">
             <h1 className="text-2xl font-bold text-center">Calorie Data Visualization</h1>
-            <div className="card w-full h-full bg-base-100">
-              <div className="card-body p-0 lg:p-4 flex justify-center items-center">
-                <Chart intake={dataDailyLog?.data[0]?.totalCaloriesIn} burn={dataDailyLog?.data[0]?.totalCaloriesOut} tdee={dataDailyLog?.data[0]?.tdee} />
+            {!isLoadingDailyLog ? (
+              <div className="card w-full h-full bg-base-100">
+                <div className="card-body p-0 lg:p-4 flex justify-center items-center">
+                  <Chart intake={dataDailyLog?.data[0]?.totalCaloriesIn} burn={dataDailyLog?.data[0]?.totalCaloriesOut} tdee={dataDailyLog?.data[0]?.tdee} />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="flex items-center justify-center">
+                <div className="card w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-full lg:h-[567px] skeleton" />
+              </div>
+            )}
           </div>
         </div>
       </div>
