@@ -15,11 +15,13 @@ const MainLayout = (props: PropType) => {
     <Fragment>
       <PageHead title={title} />
       <div className="flex min-h-screen bg-base-200">
-        {/* Sidebar dengan tinggi penuh */}
-        <SidebarLayout />
+        {/* Sidebar dengan tinggi penuh & lebar penuh */}
+        <aside className="fixed hidden top-0 left-0 w-screen h-screen bg-white lg:flex flex-col gap-6 z-50 lg:w-64">
+          <SidebarLayout />
+        </aside>
 
         {/* Main content wrapper */}
-        <main className="flex flex-col flex-1 min-h-screen">
+        <main className="flex flex-col flex-1 min-h-screen lg:ml-64">
           {/* Navbar di atas */}
           <NavbarLayout />
 

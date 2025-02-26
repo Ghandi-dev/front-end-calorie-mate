@@ -41,6 +41,10 @@ const Chart = ({ intake, burn, tdee }: PropTypes) => {
     },
   };
 
+  if (!intake && !burn) {
+    return <h1 className="text-gray-400">No records found for today</h1>;
+  }
+
   return (
     <div className="w-full max-w-[250px] md:max-w-[400px] lg:max-w-[500px] h-auto">
       <PolarArea data={data} options={options} />

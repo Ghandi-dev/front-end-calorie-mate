@@ -91,7 +91,7 @@ const AddDailyLogModal = (props: PropTypes) => {
               render={({ field }) => (
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text">Goal</span>
+                    <span className="label-text">Activity Level</span>
                   </label>
                   <select {...field} className="select select-bordered w-full">
                     <option value={""} disabled selected>

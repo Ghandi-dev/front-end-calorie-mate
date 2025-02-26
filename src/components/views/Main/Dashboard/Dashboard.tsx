@@ -12,7 +12,7 @@ const Dashboard = () => {
     <div className="w-full p-4 lg:p-10 mb-16 lg:mb-0">
       <Breadcrumbs />
       <div className="flex flex-col lg:flex-row mt-4 gap-4">
-        <div className="card glass w-full lg:w-1/2  ">
+        <div className="card glass w-full lg:w-1/2">
           <div className="card-body">
             <h1 className="card-title text-2xl text-neutral">{dataProfile && greeting(dataProfile?.fullname)}</h1>
             <p className="text-sm">Here you can monitor your daily calorie intake and activities effortlessly, so you can stay fit and healthy every day.</p>

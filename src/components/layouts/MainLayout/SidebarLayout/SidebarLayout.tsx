@@ -24,7 +24,7 @@ const SidebarLayout = () => {
   }
 
   return (
-    <aside className="w-64 bg-white p-6 shadow-md hidden lg:flex flex-col gap-6">
+    <aside className="w-64 h-full bg-white p-6 shadow-md hidden lg:flex flex-col gap-6">
       {/* Logo */}
       <div className="flex items-center gap-3">
         <Image src="/images/logo.png" alt="logo" width={50} height={50} />
