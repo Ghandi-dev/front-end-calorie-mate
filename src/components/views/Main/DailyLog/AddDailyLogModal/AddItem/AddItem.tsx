@@ -57,12 +57,12 @@ const AddItem = (props: PropTypes) => {
             />
 
             <div className="modal-action flex">
-              <button type="button" className={cn("btn", { disabled: disabledSubmit })} onClick={handleCloseModal}>
+              <button type="button" className={cn("btn", { "btn-disabled": disabledSubmit })} onClick={handleCloseModal}>
                 Close
               </button>
               <button
                 type="button"
-                className={cn("btn btn-primary text-base-100", { disabled: disabledSubmit })}
+                className={cn("btn btn-primary text-base-100", { "btn-disabled": disabledSubmit })}
                 onClick={handleSubmitForm(type === "food" ? handleAddFood : handleAddActivity)}
               >
                 {isPendingMutateAddItem ? <div className="loading loading-infinity loading-lg"></div> : "Submit"}

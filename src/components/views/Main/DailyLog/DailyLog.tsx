@@ -4,23 +4,22 @@ import CardDaily from "@/components/ui/CardDaily";
 import AddDailyLogModal from "./AddDailyLogModal";
 import { useState } from "react";
 import AddItem from "./AddDailyLogModal/AddItem/AddItem";
+import DeleteItem from "./DeleteDailyLogModal/DeleteItem";
+import DataPersonalCard from "./DataPersonalCard";
+import Chart from "@/components/ui/Chart";
 
 const DailyLog = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [type, setType] = useState("");
-  const [isModalItemOpen, setIsModalItemOpen] = useState(false);
+  const [modal, setModal] = useState({ isOpen: false, type: "", isAddItemOpen: false, isDeleteItemOpen: false });
+  const [selectedId, setIdSelectedId] = useState("");
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const openModal = () => setModal((prev) => ({ ...prev, isOpen: true }));
+  const closeModal = () => setModal((prev) => ({ ...prev, isOpen: false }));
 
-  const handleOpenModalItem = (type: string) => {
-    setType(type);
-    setIsModalItemOpen(true);
-  };
+  const openModalItem = (type: string) => setModal((prev) => ({ ...prev, type, isAddItemOpen: true }));
+  const closeModalItem = () => setModal((prev) => ({ ...prev, isAddItemOpen: false }));
 
-  const handleCloseModalItem = () => {
-    setIsModalItemOpen(false);
-  };
+  const openModalDeleteItem = (type: string) => setModal((prev) => ({ ...prev, type, isDeleteItemOpen: true }));
+  const closeModalDeleteItem = () => setModal((prev) => ({ ...prev, isDeleteItemOpen: false }));
 
   const { dataDailyLog, isLoadingDailyLog, refecthDailyLog } = useDailyLog();
 
@@ -28,21 +27,27 @@ const DailyLog = () => {
     <div className="w-full p-4 lg:p-10 mb-16 lg:mb-0">
       <Breadcrumbs />
       <div className="flex flex-col lg:flex-row mt-4 gap-4">
-        <div className="card glass w-full lg:w-1/2  ">
-          <div className="card-body">
-            {!dataDailyLog && (
-              <div className="flex justify-end">
-                <label htmlFor="my_modal_6" className="btn btn-primary text-base-100" onClick={() => handleOpenModal()}>
-                  Create Daily
-                </label>
-              </div>
-            )}
-            <h1 className="card-title text-2xl text-neutral">Let{"'"}s track your progress today!</h1>
+        <div className="card glass w-full lg:w-1/2 ">
+          <div className="card-body p-2 lg:p-8">
+            <h1 className="font-bold text-2xl text-neutral text-center">Let{"'"}s track your progress today!</h1>
+            <DataPersonalCard data={dataDailyLog?.data[0]} openModal={openModal} isLoading={isLoadingDailyLog} />
             <div className="flex flex-col lg:flex-row gap-4 mt-4">
               {!isLoadingDailyLog ? (
                 <>
-                  <CardDaily type="food" data={dataDailyLog?.data[0]?.food} handleOpenModalItem={handleOpenModalItem} />
-                  <CardDaily type="activity" data={dataDailyLog?.data[0]?.activity} handleOpenModalItem={handleOpenModalItem} />
+                  <CardDaily
+                    type="food"
+                    data={dataDailyLog?.data[0]?.food}
+                    handleOpenModalItem={openModalItem}
+                    handleOpenDeleteModalItem={openModalDeleteItem}
+                    setSelectedId={setIdSelectedId}
+                  />
+                  <CardDaily
+                    type="activity"
+                    data={dataDailyLog?.data[0]?.activity}
+                    handleOpenModalItem={openModalItem}
+                    handleOpenDeleteModalItem={openModalDeleteItem}
+                    setSelectedId={setIdSelectedId}
+                  />
                 </>
               ) : (
                 <>
@@ -53,14 +58,32 @@ const DailyLog = () => {
             </div>
           </div>
         </div>
+        <div className="card glass w-full lg:w-1/2">
+          <div className="card-body p-2 lg:p-8">
+            <h1 className="text-2xl font-bold text-center">Calorie Data Visualization</h1>
+            <div className="card w-full h-full bg-base-100">
+              <div className="card-body p-0 lg:p-4 flex justify-center items-center">
+                <Chart intake={dataDailyLog?.data[0]?.totalCaloriesIn} burn={dataDailyLog?.data[0]?.totalCaloriesOut} tdee={dataDailyLog?.data[0]?.tdee} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <AddDailyLogModal isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} refecthDailyLog={refecthDailyLog} />
+      <AddDailyLogModal isModalOpen={modal.isOpen} handleCloseModal={closeModal} refecthDailyLog={refecthDailyLog} />
       <AddItem
-        isModalItemOpen={isModalItemOpen}
+        isModalItemOpen={modal.isAddItemOpen}
         refecthDailyLog={refecthDailyLog}
-        type={type}
-        handleCloseModal={handleCloseModalItem}
+        type={modal.type}
+        handleCloseModal={closeModalItem}
         id={dataDailyLog?.data[0]?._id}
+      />
+      <DeleteItem
+        handleCloseModal={closeModalDeleteItem}
+        selectedId={selectedId}
+        isModalItemOpen={modal.isDeleteItemOpen}
+        refecthDailyLog={refecthDailyLog}
+        dailyLogId={dataDailyLog?.data[0]?._id}
+        type={modal.type}
       />
     </div>
   );

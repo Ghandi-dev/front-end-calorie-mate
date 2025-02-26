@@ -14,12 +14,14 @@ const AddDailyLogModal = (props: PropTypes) => {
   const { control, errors, handleSubmitForm, handleAddDailyLog, reset, isPendingMutateAddDailyLog, isSuccessMutateAddDailyLog } = useAddDailyLogModal();
 
   const disabledSubmit = isPendingMutateAddDailyLog || isPendingMutateAddDailyLog;
+
   useEffect(() => {
     if (isSuccessMutateAddDailyLog) {
       handleCloseModal();
       refecthDailyLog();
     }
-  }, [isSuccessMutateAddDailyLog, handleCloseModal, refecthDailyLog]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccessMutateAddDailyLog]);
 
   useEffect(() => {
     if (!isModalOpen) {
@@ -106,10 +108,14 @@ const AddDailyLogModal = (props: PropTypes) => {
               )}
             />
             <div className="modal-action flex">
-              <button type="button" className={cn("btn", { disabled: disabledSubmit })} onClick={handleCloseModal}>
+              <button type="button" className={cn("btn", { "btn-disabled": disabledSubmit })} onClick={handleCloseModal}>
                 Close
               </button>
-              <button type="button" className={cn("btn btn-primary text-base-100", { disabled: disabledSubmit })} onClick={handleSubmitForm(handleAddDailyLog)}>
+              <button
+                type="button"
+                className={cn("btn btn-primary text-base-100", { "btn-disabled": disabledSubmit })}
+                onClick={handleSubmitForm(handleAddDailyLog)}
+              >
                 {isPendingMutateAddDailyLog ? <div className="loading loading-infinity loading-lg"></div> : "Submit"}
               </button>
             </div>

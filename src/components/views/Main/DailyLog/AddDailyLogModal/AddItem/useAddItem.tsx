@@ -22,7 +22,7 @@ const useAddItem = (id: string) => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const addItem = async (payload: IDailyLog) => {
-    const res = await dailyLogServices.updateDailyLog(id, payload);
+    const res = await dailyLogServices.updateDailyLogFoodActivity(id, payload);
     return res;
   };
 

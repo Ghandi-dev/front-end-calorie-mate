@@ -8,9 +8,10 @@ const dailyLogServices = {
   getDailyLogByMember: (params: string) => instance.get(`${endpoint.DAILYLOG}-member?${params}`),
   getDailyLogReport: (id: string) => instance.get(`${endpoint.DAILYLOG}-report/${id}`),
   createDailyLog: (payload: IDailyLog) => instance.post(`${endpoint.DAILYLOG}`, payload),
-  updateDailyLog: (id: string, payload: IDailyLog) => instance.put(`${endpoint.DAILYLOG}/${id}`, payload),
-  deleteFoodDailyLog: (id: string, foodId: string) => instance.delete(`${endpoint.DAILYLOG}/${id}/food/${foodId}`),
-  deleteActivityDailyLog: (id: string, activityId: string) => instance.delete(`${endpoint.DAILYLOG}/${id}/activity/${activityId}`),
+  updateDailyLogPersonal: (id: string, payload: IDailyLog) => instance.put(`${endpoint.DAILYLOG}/${id}/personal`, payload),
+  updateDailyLogFoodActivity: (id: string, payload: IDailyLog) => instance.put(`${endpoint.DAILYLOG}/${id}/food-activity`, payload),
+  deleteDailyLogFood: (id: string, foodId: string) => instance.delete(`${endpoint.DAILYLOG}/${id}/food/${foodId}`),
+  deleteDailyLogActivity: (id: string, activityId: string) => instance.delete(`${endpoint.DAILYLOG}/${id}/activity/${activityId}`),
 };
 
 export default dailyLogServices;
