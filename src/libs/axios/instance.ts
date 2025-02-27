@@ -31,7 +31,7 @@ instance.interceptors.response.use(
   (response) => response, // Jika response sukses, lanjutkan
   (error) => {
     onErrorHandler(error); // Panggil error handler
-    return Promise.reject(error);
+    // return Promise.reject(error);
   }
 );
 

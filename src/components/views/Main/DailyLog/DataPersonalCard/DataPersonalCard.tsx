@@ -1,5 +1,6 @@
 import { IDailyLog } from "@/types/DailyLog";
 import { cn } from "@/utils/cn";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Fragment } from "react";
 
@@ -10,16 +11,18 @@ interface PropTypes {
 }
 
 const DataPersonalCard = (props: PropTypes) => {
+  const t = useTranslations("dailyLog");
+
   const { data, isLoading, openModal } = props;
   return (
     <div className={cn("card min-h-[178px]", { skeleton: isLoading }, { "bg-base-100": !isLoading })}>
       <div className="p-6 flex flex-col w-full">
         <div className="flex items-center justify-between">
-          <h3 className="card-title text-neutral">Your Data</h3>
+          <h3 className="card-title text-neutral">{t("title")}</h3>
           {!data && (
             <div className="flex justify-end">
               <label htmlFor="my_modal_6" className="btn btn-primary text-base-100" onClick={openModal}>
-                Create Daily
+                {t("create")}
               </label>
             </div>
           )}
@@ -45,7 +48,7 @@ const DataPersonalCard = (props: PropTypes) => {
               </div>
             </Fragment>
           ) : (
-            <h1 className="text-center text-gray-400">No records found for today</h1>
+            <h1 className="text-center text-gray-400">{t("notFound")}</h1>
           )}
         </div>
       </div>

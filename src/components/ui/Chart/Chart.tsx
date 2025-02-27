@@ -1,5 +1,6 @@
 import { PolarArea } from "react-chartjs-2";
 import { Chart as ChartJS, RadialLinearScale, ArcElement, Tooltip, Legend } from "chart.js";
+import { useTranslations } from "next-intl";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
@@ -10,6 +11,7 @@ interface PropTypes {
 }
 
 const Chart = ({ intake, burn, tdee }: PropTypes) => {
+  const t = useTranslations("dashboard");
   const data = {
     labels: ["Calories Intake", "Calories Burn"],
     datasets: [
@@ -42,7 +44,11 @@ const Chart = ({ intake, burn, tdee }: PropTypes) => {
   };
 
   if (!intake && !burn) {
-    return <h1 className="text-gray-400">No records found for today</h1>;
+    return (
+      <div className="min-h-[250px] flex items-center justify-center text-center">
+        <h1 className="text-gray-400">{t("notFound")}</h1>
+      </div>
+    );
   }
 
   return (

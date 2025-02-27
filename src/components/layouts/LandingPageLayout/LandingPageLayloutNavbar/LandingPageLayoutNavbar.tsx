@@ -1,6 +1,7 @@
 import { BUTTON_ITEMS } from "../LandingPageLayout.constants";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 const LandingPageLayoutNavbar = () => {
   const router = useRouter();
@@ -12,6 +13,7 @@ const LandingPageLayoutNavbar = () => {
           <a className="btn btn-ghost text-xl ">CalorieMate</a>
         </div>
         <div className="flex-none">
+          <LanguageSwitcher />
           <ul className="menu menu-horizontal px-1">
             {BUTTON_ITEMS.map((item) => (
               <li key={item.label}>

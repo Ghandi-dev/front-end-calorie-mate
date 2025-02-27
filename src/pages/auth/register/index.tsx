@@ -1,5 +1,6 @@
 import AuthLayout from "@/components/layouts/AuthLayout";
 import Register from "@/components/views/Auth/Register";
+import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
 const RegisterPage = () => {
   return (
@@ -10,3 +11,5 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
+
+export const getStaticProps = getStaticPropsWithTranslations();

@@ -5,6 +5,9 @@ import { SessionProvider } from "next-auth/react";
 import AppShell from "@/components/commons/AppShell";
 import { onErrorHandler } from "@/libs/axios/responseHandler";
 import { ToasterProvider } from "@/context/ToasterContext";
+import { NextIntlClientProvider } from "next-intl";
+import { useRouter } from "next/router";
+import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,12 +29,16 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
   return (
     <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>
-        <ToasterProvider>
-          <AppShell>
-            <Component {...pageProps} />
-          </AppShell>
-        </ToasterProvider>
+        <NextIntlClientProvider locale={useRouter().locale} timeZone="Asia/Jakarta" messages={pageProps.messages}>
+          <ToasterProvider>
+            <AppShell>
+              <Component {...pageProps} />
+            </AppShell>
+          </ToasterProvider>
+        </NextIntlClientProvider>
       </QueryClientProvider>
     </SessionProvider>
   );
 }
+
+export const getStaticProps = getStaticPropsWithTranslations();
