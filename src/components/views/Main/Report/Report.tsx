@@ -15,13 +15,17 @@ const Report = () => {
         <div className="card bg-base-100 w-full md:w-1/4 flex items-center justify-center p-4">
           <Image src="/images/report.svg" alt="report-logo" layout="responsive" width={1} height={1} />
         </div>
-        <div
-          className={cn("card flex bg-base-100 w-full p-4", {
-            "text-center items-center justify-center text-gray-400": !dataReport || isLoadingDataReport,
-          })}
-        >
-          {dataReport ?? t("no_records")}
-        </div>
+        {isLoadingDataReport ? (
+          <div className="card skeleton w-full h-[364px] md:h-auto"></div>
+        ) : (
+          <div
+            className={cn("card flex bg-base-100 w-full p-4", {
+              "text-center items-center justify-center text-gray-400": !dataReport || isLoadingDataReport,
+            })}
+          >
+            {dataReport ?? t("no_records")}
+          </div>
+        )}
       </div>
       <div className="card flex md:flex-row gap-4 w-full glass mt-4 text-justify p-2 lg:p-6">
         <div className="card bg-base-100 w-full flex p-4 gap-4">

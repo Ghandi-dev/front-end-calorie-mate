@@ -1,5 +1,6 @@
 {
   "dashboard": {
+    "add": "Add",
     "greeting": "Good {time}, {name}",
     "description": "Here you can monitor your daily calorie intake and activities effortlessly, so you can stay fit and healthy every day.",
     "food": "Food",

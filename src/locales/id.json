@@ -1,5 +1,6 @@
 {
   "dashboard": {
+    "add": "Tambah",
     "greeting": "Selamat {time}, {name}",
     "description": "Di sini Anda dapat memantau asupan kalori harian dan aktivitas dengan mudah, sehingga Anda bisa tetap bugar dan sehat setiap hari.",
     "food": "Makanan",

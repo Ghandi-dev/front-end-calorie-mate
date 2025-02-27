@@ -58,7 +58,9 @@ const CardDaily = (props: PropTypes) => {
           </div>
           {isAdd && data && (
             <div className="card-actions justify-end mx-8 mb-4">
-              <button className="btn btn-primary text-base-100" onClick={() => handleOpenModalItem && handleOpenModalItem(type)}>{`Add ${type}`}</button>
+              <button className="btn btn-primary text-base-100" onClick={() => handleOpenModalItem && handleOpenModalItem(type)}>
+                {t("add")} {t(type)}
+              </button>
             </div>
           )}
         </div>
