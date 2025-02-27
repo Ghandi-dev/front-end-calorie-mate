@@ -1,6 +1,5 @@
 import AuthLayout from "@/components/layouts/AuthLayout";
 import Activation from "@/components/views/Auth/Activation";
-import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 import authServices from "@/services/auth.service";
 
 interface PropTypes {
@@ -43,5 +42,3 @@ export async function getServerSideProps(contex: { query: { code: string } }) {
 }
 
 export default ActivationPage;
-
-export const getStaticProps = getStaticPropsWithTranslations();
