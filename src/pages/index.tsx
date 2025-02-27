@@ -1,5 +1,6 @@
 import LandingPageLayout from "@/components/layouts/LandingPageLayout";
 import Home from "@/components/views/Home";
+import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
 export default function HomePage() {
   return (
@@ -8,3 +9,5 @@ export default function HomePage() {
     </LandingPageLayout>
   );
 }
+
+export const getStaticProps = getStaticPropsWithTranslations();

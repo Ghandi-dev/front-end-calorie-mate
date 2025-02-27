@@ -1,5 +1,6 @@
 import AuthLayout from "@/components/layouts/AuthLayout";
 import RegisterSuccess from "@/components/views/Auth/RegisterSuccess/RegisterSucces";
+import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
 const RegisterSuccessPage = () => {
   return (
@@ -10,3 +11,5 @@ const RegisterSuccessPage = () => {
 };
 
 export default RegisterSuccessPage;
+
+export const getStaticProps = getStaticPropsWithTranslations();

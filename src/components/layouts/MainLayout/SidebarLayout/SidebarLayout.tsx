@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { BiSolidLogOut } from "react-icons/bi";
 import useSidebarLayout from "./useSidebarLayout";
 import { useEffect, useState } from "react";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 const SidebarLayout = () => {
   const router = useRouter();
@@ -44,6 +45,7 @@ const SidebarLayout = () => {
           <>
             <Image src={dataProfile?.avatar || "/images/avatar-1.svg"} alt="profile" width={80} height={80} className="rounded-full mx-auto" />
             <p className="mt-2 font-semibold">{dataProfile?.fullname || "User Name"}</p>
+            <LanguageSwitcher />
           </>
         )}
       </div>

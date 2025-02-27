@@ -1,0 +1,130 @@
+{
+  "dashboard": {
+    "add": "Tambah",
+    "greeting": "Selamat {time}, {name}",
+    "description": "Di sini Anda dapat memantau asupan kalori harian dan aktivitas dengan mudah, sehingga Anda bisa tetap bugar dan sehat setiap hari.",
+    "food": "Makanan",
+    "activity": "Aktivitas",
+    "more": "lainnya..",
+    "notFound": "Tidak ada data untuk hari ini."
+  },
+  "dailyLog": {
+    "title form daily": "Form Catatan Harian",
+    "weight": "Berat Badan",
+    "height": "Tinggi Badan",
+    "goal": "Tujuan",
+    "select goal": "Pilih tujuan anda",
+    "select activity": "Pilih tingkat aktivitas anda",
+    "activity level": "Tingkat Aktivitas",
+    "lose": "Menurunkan Berat Badan",
+    "maintain": "Menjaga Berat Badan",
+    "gain": "Menaikkan Berat Badan",
+    "sedentary": "Tidak Aktif",
+    "lightly": "Sedikit Aktif",
+    "moderately": "Cukup Aktif",
+    "very": "Sangat Aktif",
+    "super": "Sangat Aktif Sekali",
+    "title": "Data Anda",
+    "create": "Tambah Data",
+    "description": "Ayo catat progres Anda hari ini!",
+    "chart": "Visualisasi Data Kalori",
+    "close": "Tutup",
+    "submit": "Kirim",
+    "notFound": "Tidak ada catatan untuk hari ini."
+  },
+  "report": {
+    "breadcrumbs": "Jalur Navigasi",
+    "no_records": "Tidak ada catatan untuk hari ini",
+    "glossary": "Glosarium",
+    "bmr": {
+      "title": "BMR",
+      "description": "Basal Metabolic Rate (BMR) adalah jumlah energi yang dibutuhkan tubuh saat istirahat untuk mempertahankan fungsi-fungsi penting seperti pernapasan, sirkulasi, dan produksi sel. BMR dipengaruhi oleh faktor seperti usia, jenis kelamin, massa otot, dan genetika. BMR mewakili jumlah kalori minimum yang dibutuhkan untuk mempertahankan kehidupan tanpa aktivitas fisik dan berbeda dari Total Daily Energy Expenditure (TDEE), yang mencakup pergerakan dan olahraga."
+    },
+    "tdee": {
+      "title": "TDEE",
+      "description": "Total Daily Energy Expenditure (TDEE) adalah jumlah total kalori yang dibakar tubuh dalam sehari, termasuk Basal Metabolic Rate (BMR), aktivitas fisik, dan energi yang digunakan untuk pencernaan (Thermic Effect of Food, TEF). TDEE bervariasi berdasarkan faktor seperti usia, berat badan, tingkat aktivitas, dan metabolisme. Ini penting untuk menentukan asupan kalori guna mempertahankan, menurunkan, atau menambah berat badan."
+    },
+    "bmi": {
+      "title": "BMI",
+      "description": "Body Mass Index (BMI) adalah nilai numerik yang dihitung dari berat dan tinggi seseorang untuk menilai apakah seseorang memiliki berat badan yang sehat. Ini sering digunakan sebagai alat skrining untuk mengkategorikan orang ke dalam kelompok berat badan yang berbeda seperti kurus, normal, kelebihan berat badan, dan obesitas. Meskipun BMI memberikan indikasi umum tentang tingkat lemak tubuh, ini tidak mempertimbangkan massa otot, kepadatan tulang, atau distribusi lemak, sehingga merupakan perkiraan daripada pengukuran kesehatan yang akurat."
+    }
+  },
+  "form": {
+    "register": "Buat akun",
+    "fullname": "Nama Lengkap",
+    "username": "Nama Pengguna",
+    "gender": "Jenis Kelamin",
+    "select_gender": "Pilih jenis kelamin",
+    "male": "Laki-laki",
+    "female": "Perempuan",
+    "birth_date": "Tanggal Lahir",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "confirm_password": "Konfirmasi Kata Sandi",
+    "register_button": "Daftar",
+    "already_have_account": "Sudah punya akun?",
+    "login_here": "Masuk di sini",
+    "login": "Masuk",
+    "identifier": "Nama pengguna atau email",
+    "login_button": "Masuk",
+    "dont_have_account": "Belum punya akun?",
+    "name": "Nama",
+    "submit": "Kirim",
+    "delete": "Hapus",
+    "close": "Tutup",
+    "food": "Makanan",
+    "activity": "Aktivitas",
+    "confirmDelete": "Apakah Anda yakin ingin menghapus {type} ini?"
+  },
+  "home": {
+    "hero": {
+      "title": "Pantau Kalori Anda, Capai Tujuan Kesehatan Anda!",
+      "description": "CalorieMate membantu Anda memantau asupan kalori dan aktivitas harian dengan mudah, sehingga Anda tetap bugar dan sehat setiap hari.",
+      "getStarted": "👉 Mulai Sekarang",
+      "motivation": "- Jadilah versi terbaik dari diri Anda!"
+    },
+    "whySection": {
+      "title": "Mengapa CalorieMate?",
+      "feature1": {
+        "title": "1. Integrasi AI",
+        "description": "CalorieMate memanfaatkan kecerdasan buatan untuk mengoptimalkan perjalanan kesehatan Anda. AI menganalisis kebiasaan makan dan pola latihan Anda untuk memberikan rekomendasi personal, memastikan Anda tetap pada jalur tujuan kesehatan Anda dengan mudah."
+      },
+      "feature2": {
+        "title": "2. Pelacakan Kalori yang Mudah",
+        "description": "Pantau asupan kalori Anda dengan mudah! CalorieMate memungkinkan Anda memasukkan makanan dan menerima perkiraan kalori yang akurat secara instan. Baik Anda makan di luar atau memasak di rumah, mencatat makanan Anda belum pernah semudah ini."
+      },
+      "feature3": {
+        "title": "3. Pelacakan Latihan & Pembakaran Kalori",
+        "description": "Tetap informasi tentang pengeluaran kalori Anda. CalorieMate terintegrasi dengan pelacak kebugaran untuk memantau latihan Anda, membantu Anda memahami berapa banyak energi yang Anda bakar setiap hari. Ini memungkinkan Anda untuk menjaga asupan kalori yang seimbang dan mengoptimalkan rutinitas kebugaran Anda."
+      },
+      "feature4": {
+        "title": "4. Saran Resep Berbasis AI",
+        "description": "Kesulitan dengan perencanaan makanan? Biarkan AI membantu Anda! CalorieMate menyarankan resep yang dipersonalisasi berdasarkan tujuan nutrisi dan preferensi makanan Anda. Baik Anda bertujuan untuk menurunkan berat badan, menambah otot, atau nutrisi seimbang, AI menyesuaikan ide makanan yang selaras dengan tujuan kesehatan Anda."
+      }
+    },
+    "stepsSection": {
+      "title": "Capai Tujuan Kesehatanmu dalam 3 Langkah Mudah",
+      "step1": {
+        "number": "1",
+        "title": "Lacak Nutrisi Dan Kebugaran",
+        "description": "Pantau asupan makanan, rutinitas olahraga harian untuk memahami pola kesehatanmu."
+      },
+      "step2": {
+        "number": "2",
+        "title": "Pelajari Apa yang Terbaik untuk Tubuhmu",
+        "description": "Dapatkan wawasan dari data pribadimu untuk membuat keputusan yang lebih cerdas tentang pola makan dan kebugaran."
+      },
+      "step3": {
+        "number": "3",
+        "title": "Raih Tujuan Kesehatanmu",
+        "description": "Gunakan analitik dan rekomendasi yang dipersonalisasi untuk tetap berada di jalur menuju kesehatan optimal."
+      }
+    },
+    "common": {
+      "login": "Masuk",
+      "register": "Daftar",
+      "dashboard": "Dasbor",
+      "profile": "Profil"
+    }
+  }
+}

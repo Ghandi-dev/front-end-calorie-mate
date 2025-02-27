@@ -1,3 +1,4 @@
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 
@@ -20,8 +21,9 @@ const NavbarLayout = () => {
             <Image src="/images/logo.png" alt="logo" width={40} height={40} />
             <a className="btn btn-ghost text-xl ">CalorieMate</a>
           </div>
-          <div className="flex-none gap-2">
-            <div className=" avatar">
+          <div className="flex item-center">
+            <LanguageSwitcher />
+            <div className="avatar">
               <div className="w-10 rounded-full">
                 <Image src="/images/avatar-1.svg" alt="picture" width={10} height={10} />
               </div>

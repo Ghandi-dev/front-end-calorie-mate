@@ -7,8 +7,10 @@ import AddItem from "./AddDailyLogModal/AddItem/AddItem";
 import DeleteItem from "./DeleteDailyLogModal/DeleteItem";
 import DataPersonalCard from "./DataPersonalCard";
 import Chart from "@/components/ui/Chart";
+import { useTranslations } from "next-intl";
 
 const DailyLog = () => {
+  const t = useTranslations("dailyLog");
   const [modal, setModal] = useState({ isOpen: false, type: "", isAddItemOpen: false, isDeleteItemOpen: false });
   const [selectedId, setIdSelectedId] = useState("");
 
@@ -29,7 +31,7 @@ const DailyLog = () => {
       <div className="flex flex-col lg:flex-row mt-4 gap-4">
         <div className="card glass w-full lg:w-1/2 ">
           <div className="card-body p-2 lg:p-8">
-            <h1 className="font-bold text-2xl text-neutral text-center">Let{"'"}s track your progress today!</h1>
+            <h1 className="font-bold text-2xl text-neutral text-center">{t("description")}</h1>
             {!isLoadingDailyLog ? (
               <DataPersonalCard data={dataDailyLog?.data[0]} openModal={openModal} isLoading={isLoadingDailyLog} />
             ) : (
@@ -64,7 +66,7 @@ const DailyLog = () => {
         </div>
         <div className="card glass w-full lg:w-1/2">
           <div className="card-body p-2 lg:p-8">
-            <h1 className="text-2xl font-bold text-center">Calorie Data Visualization</h1>
+            <h1 className="text-2xl font-bold text-center">{t("chart")}</h1>
             {!isLoadingDailyLog ? (
               <div className="card w-full h-full bg-base-100">
                 <div className="card-body p-0 lg:p-4 flex justify-center items-center">

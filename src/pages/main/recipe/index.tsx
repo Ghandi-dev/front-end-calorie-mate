@@ -1,15 +1,15 @@
 import MainLayout from "@/components/layouts/MainLayout";
-import DailyLog from "@/components/views/Main/DailyLog";
+import Recipe from "@/components/views/Main/Recipe";
 import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
-const DailyLogPage = () => {
+const RecipePage = () => {
   return (
-    <MainLayout title="CalorieMate | Dashboard">
-      <DailyLog />
+    <MainLayout title="CalorieMate | Recipe">
+      <Recipe />
     </MainLayout>
   );
 };
 
-export default DailyLogPage;
+export default RecipePage;
 
 export const getStaticProps = getStaticPropsWithTranslations();

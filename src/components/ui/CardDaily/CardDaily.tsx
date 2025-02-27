@@ -1,5 +1,6 @@
 import { IActivity, IFood } from "@/types/DailyLog";
 import { cn } from "@/utils/cn";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -16,6 +17,7 @@ interface PropTypes {
 }
 
 const CardDaily = (props: PropTypes) => {
+  const t = useTranslations("dashboard");
   const { type = "food", data, isLoading, isAdd = true, handleOpenModalItem, handleOpenDeleteModalItem, setSelectedId } = props;
   return (
     <Fragment>
@@ -23,12 +25,12 @@ const CardDaily = (props: PropTypes) => {
         <div className={cn("card shadow-lg w-full h-[365px] bg-base-100")}>
           <div className="flex mx-8 mt-4 justify-between items-center">
             <div className="flex gap-2 items-center">
-              <h3 className="card-title capitalize">{type}</h3>
+              <h3 className="card-title capitalize">{t(type)}</h3>
               <Image src={`/images/${type}.svg`} alt={`${type} icon`} width={40} height={40} className="object-contain" />
             </div>
             {!isAdd && (
               <Link href="/main/daily-log" className="flex items-center text-primary" aria-label={`View more ${type}`}>
-                More..
+                {t("more")}
               </Link>
             )}
           </div>
@@ -52,11 +54,13 @@ const CardDaily = (props: PropTypes) => {
                 </div>
               </div>
             ))}
-            {(data?.length ?? 0) < 1 && <div className="text-center text-gray-500">No records found for today.</div>}
+            {(data?.length ?? 0) < 1 && <div className="text-center text-gray-400">{t("notFound")}</div>}
           </div>
           {isAdd && data && (
             <div className="card-actions justify-end mx-8 mb-4">
-              <button className="btn btn-primary text-base-100" onClick={() => handleOpenModalItem && handleOpenModalItem(type)}>{`Add ${type}`}</button>
+              <button className="btn btn-primary text-base-100" onClick={() => handleOpenModalItem && handleOpenModalItem(type)}>
+                {t("add")} {t(type)}
+              </button>
             </div>
           )}
         </div>

@@ -1,0 +1,129 @@
+{
+  "dashboard": {
+    "add": "Add",
+    "greeting": "Good {time}, {name}",
+    "description": "Here you can monitor your daily calorie intake and activities effortlessly, so you can stay fit and healthy every day.",
+    "food": "Food",
+    "activity": "Activity",
+    "more": "more..",
+    "notFound": "No records found for today."
+  },
+  "dailyLog": {
+    "title form daily": "Daily Log Form",
+    "weight": "Weight",
+    "height": "Height",
+    "goal": "Goal",
+    "select goal": "Select your goal",
+    "select activity": "Select your activity level",
+    "activity level": "Activity Level",
+    "lose": "Lose Weight",
+    "maintain": "Maintain Weight",
+    "gain": "Gain Weight",
+    "sedentary": "Sedentary",
+    "lightly": "Light Active",
+    "moderately": "Moderately Active",
+    "very": "Very Active",
+    "super": "Super Active",
+    "title": "Your Data",
+    "create": "Create Daily",
+    "description": "Let's track your progress today!",
+    "chart": "Calorie Data Visualization",
+    "food": "Food",
+    "activity": "Activity",
+    "more": "more",
+    "close": "Close",
+    "submit": "Submit",
+    "notFound": "No records found for today."
+  },
+  "report": {
+    "breadcrumbs": "Breadcrumbs",
+    "no_records": "No records found for today",
+    "glossary": "Glossary",
+    "bmr": {
+      "title": "BMR",
+      "description": "Basal Metabolic Rate (BMR) is the amount of energy your body needs at rest to maintain essential functions like breathing, circulation, and cell production. It is influenced by factors such as age, gender, muscle mass, and genetics. BMR represents the minimum calories required to sustain life without physical activity and differs from Total Daily Energy Expenditure (TDEE), which includes movement and exercise."
+    },
+    "tdee": {
+      "title": "TDEE",
+      "description": "Total Daily Energy Expenditure (TDEE) is the total number of calories your body burns in a day, including Basal Metabolic Rate (BMR), physical activity, and the energy used for digestion (Thermic Effect of Food, TEF). TDEE varies based on factors like age, weight, activity level, and metabolism. It is essential for determining calorie intake for weight maintenance, loss, or gain."
+    },
+    "bmi": {
+      "title": "BMI",
+      "description": "Body Mass Index (BMI) is a numerical value calculated from a person's weight and height used to assess whether an individual has a healthy body weight. It is commonly used as a screening tool to categorize people into different weight groups such as underweight, normal weight, overweight, and obesity. While BMI provides a general indication of body fat levels, it does not consider muscle mass, bone density, or fat distribution, making it an estimate rather than a precise measurement of health."
+    }
+  },
+  "form": {
+    "register": "Create an account",
+    "fullname": "Fullname",
+    "username": "Username",
+    "gender": "Gender",
+    "select_gender": "Select your gender",
+    "male": "Male",
+    "female": "Female",
+    "birth_date": "Birth Date",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "register_button": "Register",
+    "already_have_account": "Have an account?",
+    "login_here": "Login here",
+    "login": "Login",
+    "identifier": "Username or email",
+    "login_button": "Login",
+    "dont_have_account": "Don't have an account?",
+    "delete": "Delete",
+    "close": "Close",
+    "confirmDelete": "Are you sure you want to delete this {type}?"
+  },
+  "home": {
+    "hero": {
+      "title": "Track Your Calories, Achieve Your Health Goals!",
+      "description": "CalorieMate helps you monitor your daily calorie intake and activities effortlessly, so you can stay fit and healthy every day.",
+      "getStarted": "👉 Get Started Now",
+      "motivation": "- Become the best version of yourself!"
+    },
+    "whySection": {
+      "title": "Why CalorieMate?",
+      "feature1": {
+        "title": "1. AI Integration",
+        "description": "CalorieMate leverages artificial intelligence to optimize your health journey. AI analyzes your dietary habits and workout patterns to provide personalized recommendations, ensuring you stay on track with your health goals effortlessly."
+      },
+      "feature2": {
+        "title": "2. Easy Calorie Tracking",
+        "description": "Track your calorie intake with ease! CalorieMate allows you to input meals and receive accurate calorie estimates instantly. Whether you're dining out or cooking at home, logging your meals has never been simpler."
+      },
+      "feature3": {
+        "title": "3. Workout & Calorie Burn Tracking",
+        "description": "Stay informed about your calorie expenditure. CalorieMate integrates with fitness trackers to monitor your workouts, helping you understand how much energy you're burning daily. This enables you to maintain a balanced calorie intake and optimize your fitness routine."
+      },
+      "feature4": {
+        "title": "4. AI-Powered Recipe Suggestions",
+        "description": "Struggling with meal planning? Let AI assist you! CalorieMate suggests personalized recipes based on your nutritional goals and dietary preferences. Whether you're aiming for weight loss, muscle gain, or balanced nutrition, AI tailors meal ideas that align with your health objectives."
+      }
+    },
+    "stepsSection": {
+      "title": "Achieve Your Health Goals in 3 Simple Steps",
+      "step1": {
+        "number": "1",
+        "title": "Track Your Nutrition And Fitness",
+        "description": "Monitor your daily food intake, exercise routines to better understand your health patterns."
+      },
+      "step2": {
+        "number": "2",
+        "title": "Discover What Works Best for You",
+        "description": "Gain insights based on your data to make informed decisions about your diet and fitness habits."
+      },
+      "step3": {
+        "number": "3",
+        "title": "Achieve Your Health Goals",
+        "description": "Use analytics and personalized recommendations to stay on track and reach optimal health."
+      }
+    },
+    "common": {
+      "login": "Login",
+      "register": "Register",
+      "dashboard": "Dashboard",
+      "profile": "Profile"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import MainLayout from "@/components/layouts/MainLayout";
 import Dashboard from "@/components/views/Main/Dashboard";
+import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
 const DashboardPage = () => {
   return (
@@ -10,3 +11,5 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
+
+export const getStaticProps = getStaticPropsWithTranslations();
