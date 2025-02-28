@@ -16,7 +16,7 @@ const loginSchema = yup.object().shape({
 const useLogin = () => {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
-  const callbackUrl: string = (router.query.callbackUrl as string) || "/";
+  const callbackUrl: string = (router.query.callbackUrl as string) || "/main/dashboard";
   const { setToaster } = useContext(ToasterContext);
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
