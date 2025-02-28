@@ -9,15 +9,23 @@ const useReport = () => {
     return res.data.data;
   };
 
-  const { data: dataReport, isLoading: isLoadingDataReport } = useQuery({
-    queryKey: ["Report"],
+  const {
+    data: dataReport,
+    isLoading: isLoadingDataReport,
+    refetch: refetchDataReport,
+    isRefetching: isRefetchingDataReport,
+  } = useQuery({
+    queryKey: ["Report", router.asPath],
     queryFn: getReport,
-    // enabled: router.isReady,
+    refetchOnWindowFocus: true,
+    staleTime: 0, // 30 detik
   });
 
   return {
     dataReport,
     isLoadingDataReport,
+    refetchDataReport,
+    isRefetchingDataReport,
   };
 };
 export default useReport;

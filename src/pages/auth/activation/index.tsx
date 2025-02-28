@@ -1,44 +1,15 @@
 import AuthLayout from "@/components/layouts/AuthLayout";
 import Activation from "@/components/views/Auth/Activation";
-import authServices from "@/services/auth.service";
+import { getStaticPropsWithTranslations } from "@/libs/intl/getStaticProps";
 
-interface PropTypes {
-  status: "success" | "failed";
-}
-
-const ActivationPage = (props: PropTypes) => {
+const ActivationPage = () => {
   return (
     <AuthLayout title="CalorieMate | Activation">
-      <Activation {...props} />
+      <Activation />
     </AuthLayout>
   );
 };
 
-export async function getServerSideProps(contex: { query: { code: string } }) {
-  try {
-    const result = await authServices.activation({ code: contex.query.code });
-
-    if (result.data.data) {
-      return {
-        props: {
-          status: "success",
-        },
-      };
-    } else {
-      return {
-        props: {
-          status: "failed",
-        },
-      };
-    }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
-    return {
-      props: {
-        status: "failed",
-      },
-    };
-  }
-}
-
 export default ActivationPage;
+
+export const getStaticProps = getStaticPropsWithTranslations();

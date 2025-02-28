@@ -4,7 +4,6 @@ import Link from "next/link";
 import { MENU_ITEMS } from "../MainLayout.constants";
 import { cn } from "@/utils/cn";
 import { useRouter } from "next/router";
-import { BiSolidLogOut } from "react-icons/bi";
 import useSidebarLayout from "./useSidebarLayout";
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
@@ -71,7 +70,6 @@ const SidebarLayout = () => {
 
       {/* Logout Button */}
       <button onClick={() => signOut({ callbackUrl: "/" })} className="btn mt-auto bg-error text-white py-2 px-4 rounded-lg">
-        <BiSolidLogOut />
         Logout
       </button>
     </aside>

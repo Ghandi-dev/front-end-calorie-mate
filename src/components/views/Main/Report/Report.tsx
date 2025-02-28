@@ -3,10 +3,14 @@ import useReport from "./useReport";
 import Image from "next/image";
 import { cn } from "@/utils/cn";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 
 const Report = () => {
   const t = useTranslations("report");
-  const { dataReport, isLoadingDataReport } = useReport();
+  const { dataReport, isLoadingDataReport, refetchDataReport, isRefetchingDataReport } = useReport();
+  useEffect(() => {
+    refetchDataReport();
+  }, [refetchDataReport]);
 
   return (
     <div className="w-full p-4 lg:p-10 mb-16 lg:mb-0">
@@ -15,7 +19,7 @@ const Report = () => {
         <div className="card bg-base-100 w-full md:w-1/4 flex items-center justify-center p-4">
           <Image src="/images/report.svg" alt="report-logo" layout="responsive" width={1} height={1} />
         </div>
-        {isLoadingDataReport ? (
+        {isLoadingDataReport || isRefetchingDataReport ? (
           <div className="card skeleton w-full h-[364px] md:h-auto"></div>
         ) : (
           <div

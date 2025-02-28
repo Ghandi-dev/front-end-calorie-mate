@@ -23,8 +23,8 @@ export default function LanguageSwitcher() {
   const activeLanguage = languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   return (
-    <div className="dropdown dropdown-end w-full">
-      <div tabIndex={0} role="button" className="btn btn-ghost m-1 lg:w-full">
+    <details className="dropdown dropdown-end w-full">
+      <summary className="btn btn-ghost m-1 lg:w-full">
         <div className="flex items-center gap-2">
           <div className="w-6 h-4 relative overflow-hidden rounded">
             <Image src={activeLanguage.flag} alt={activeLanguage.name} layout="fill" objectFit="cover" />
@@ -45,7 +45,7 @@ export default function LanguageSwitcher() {
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </div>
-      </div>
+      </summary>
       <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-50">
         {languages.map((lang) => (
           <li key={lang.code}>
@@ -60,6 +60,6 @@ export default function LanguageSwitcher() {
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   );
 }

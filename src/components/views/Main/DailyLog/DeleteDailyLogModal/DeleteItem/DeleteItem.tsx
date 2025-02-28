@@ -2,6 +2,7 @@ import { cn } from "@/utils/cn";
 import useDeleteItem from "./useDeleteItem";
 import { useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface PropTypes {
   dailyLogId: string;
@@ -13,6 +14,7 @@ interface PropTypes {
 }
 
 const DeleteItem = (props: PropTypes) => {
+  const t = useTranslations("form");
   const { dailyLogId, selectedId, isModalItemOpen, handleCloseModal, refecthDailyLog, type } = props;
   const { handleDeleteItem, isPendingMutateDeleteItem, isSuccessMutateDeleteItem } = useDeleteItem();
 
@@ -29,20 +31,22 @@ const DeleteItem = (props: PropTypes) => {
     <div className="modal modal-open">
       <div className="modal-box">
         <div className="flex flex-col justify-center items-center gap-2">
-          <h1 className="text-xl text-neutral text-center font-bold capitalize">Delete {type}</h1>
+          <h1 className="text-xl text-neutral text-center font-bold capitalize">
+            {t("delete")} {t(type)}
+          </h1>
           <Image src="/images/warning.svg" alt="logo" width={100} height={100} />
-          <p className="text-gray-500 text-center">Are you sure you want to delete this {type}?</p>
+          <p className="text-gray-500 text-center">{t("confirmDelete", { type: t(type) })}</p>
         </div>
         <div className="modal-action flex">
           <button type="button" className={cn("btn", { "btn-disabled hover:bg-none": isPendingMutateDeleteItem })} onClick={handleCloseModal}>
-            Close
+            {t("close")}
           </button>
           <button
             type="button"
             className={cn("btn btn-error text-base-100 ", { "btn-disabled hover:bg-none": isPendingMutateDeleteItem })}
             onClick={() => handleDeleteItem(dailyLogId, selectedId, type)}
           >
-            {isPendingMutateDeleteItem ? <div className="loading loading-infinity loading-lg"></div> : "Delete"}
+            {isPendingMutateDeleteItem ? <div className="loading loading-infinity loading-lg"></div> : t("delete")}
           </button>
         </div>
       </div>

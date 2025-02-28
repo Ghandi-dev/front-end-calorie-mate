@@ -17,7 +17,7 @@ const Dashboard = () => {
       <Breadcrumbs />
       <div className="flex flex-col lg:flex-row mt-4 gap-4">
         <div className="card glass w-full lg:w-1/2">
-          <div className="card-body">
+          <div className="card-body p-2 lg:p-8">
             <h1 className="card-title text-2xl text-neutral">{dataProfile && greeting(dataProfile?.fullname, router.locale ?? "en")}</h1>
             <p className="text-sm">{t("description")}</p>
             <div className="flex flex-col lg:flex-row gap-4 mt-4">
