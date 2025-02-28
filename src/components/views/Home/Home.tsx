@@ -49,9 +49,9 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
               viewport={{ once: true }}
-              className="glass rounded-2xl shadow-xl mr-5"
+              className="glass rounded-2xl shadow-xl mr-5 p-4 flex items-center justify-center"
             >
-              <Image src="/images/logo.png" alt="hero" width={400} height={400} />
+              <Image src="/images/illustration/analys.svg" alt="hero" width={400} height={400} />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -76,7 +76,7 @@ const Home = () => {
         </div>
       </section>
       <div className="flex items-center justify-center mx-auto bg-primary py-10">
-        <h2 className="text-xl md:text-3xl font-bold text-base-100">{t("stepsSection.title")}</h2>
+        <h2 className="text-xl md:text-3xl font-bold text-base-100 text-center">{t("stepsSection.title")}</h2>
       </div>
       <section className="text-center m-0 px-4 py-16 ">
         <div className="flex flex-col items-center justify-center gap-12 mt-12">
@@ -88,8 +88,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-center gap-6"
           >
-            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
-              <Image src="/images/logo.png" alt={t("stepsSection.step1.title")} width={256} height={256} />
+            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg p-4 flex items-center justify-center">
+              <Image src="/images/illustration/fitness.svg" alt={t("stepsSection.step1.title")} width={256} height={256} />
             </div>
             <div className="text-left">
               <h3 className="text-3xl text-primary font-bold">{t("stepsSection.step1.number")}</h3>
@@ -106,8 +106,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row-reverse items-center gap-6"
           >
-            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
-              <Image src="/images/logo.png" alt={t("stepsSection.step2.title")} width={256} height={256} />
+            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg p-4 flex items-center justify-center">
+              <Image src="/images/illustration/personal_goal.svg" alt={t("stepsSection.step2.title")} width={256} height={256} />
             </div>
             <div className="text-left">
               <h3 className="text-3xl text-primary font-bold">{t("stepsSection.step2.number")}</h3>
@@ -124,8 +124,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-center gap-6"
           >
-            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
-              <Image src="/images/logo.png" alt={t("stepsSection.step3.title")} width={256} height={256} />
+            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg p-4 flex items-center justify-center">
+              <Image src="/images/illustration/target.svg" alt={t("stepsSection.step3.title")} width={256} height={256} />
             </div>
             <div className="text-left">
               <h3 className="text-3xl text-primary font-bold">{t("stepsSection.step3.number")}</h3>

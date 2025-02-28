@@ -1,9 +1,9 @@
-import { BiSolidLogOut } from "react-icons/bi";
 import { MENU_ITEMS } from "../MainLayout.constants";
 import { signOut } from "next-auth/react";
 import { cn } from "@/utils/cn";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 const BottomMenuLayout = () => {
   const router = useRouter();
@@ -16,7 +16,7 @@ const BottomMenuLayout = () => {
       ))}
       <button className="text-error" onClick={() => signOut({ callbackUrl: "/" })}>
         <span className="text-xl">
-          <BiSolidLogOut />
+          <Image src={"/images/logout.svg"} width={20} height={20} alt={"logout"} />
         </span>
       </button>
     </div>

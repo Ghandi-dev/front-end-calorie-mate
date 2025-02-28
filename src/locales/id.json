@@ -68,6 +68,8 @@
     "identifier": "Nama pengguna atau email",
     "login_button": "Masuk",
     "dont_have_account": "Belum punya akun?",
+    "register_here": "Daftar di sini",
+    "create_account": "Buat akun",
     "name": "Nama",
     "submit": "Kirim",
     "delete": "Hapus",
@@ -126,5 +128,14 @@
       "dashboard": "Dasbor",
       "profile": "Profil"
     }
+  },
+  "auth": {
+    "title_success_register": "Pendaftaran Berhasil",
+    "message_success_register": "Akun Anda telah berhasil dibuat. Silakan periksa email Anda untuk memverifikasi akun Anda.",
+    "message_success_activation": "Terima kasih telah mengaktifkan akun Anda",
+    "title_success_activation": "Aktivasi Berhasil",
+    "message_failed_activation": "Gagal mengaktifkan akun Anda",
+    "title_failed_activation": "Aktivasi Gagal",
+    "back_to_login": "Kembali ke Halaman Login"
   }
 }
