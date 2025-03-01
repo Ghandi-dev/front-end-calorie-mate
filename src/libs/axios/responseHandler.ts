@@ -21,7 +21,7 @@ const onErrorHandler = (error: Error) => {
     throw new Error("username or email already exist");
   }
 
-  throw new Error(axiosError.response?.data?.meta?.message || "Something went wrong");
+  // throw new Error(axiosError.response?.data?.meta?.message || "Something went wrong");
 };
 
 export { onErrorHandler };
