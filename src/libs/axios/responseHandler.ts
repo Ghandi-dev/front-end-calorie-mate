@@ -2,7 +2,7 @@ import { AxiosError } from "axios";
 import { signOut } from "next-auth/react";
 
 interface ErrorResponseData {
-  meta?: { message: string }; // Menyesuaikan agar lebih fleksibel
+  meta?: { message: string; status: number }; // Menyesuaikan agar lebih fleksibel
 }
 
 const onErrorHandler = (error: Error) => {
@@ -13,12 +13,15 @@ const onErrorHandler = (error: Error) => {
 
     if (errorName === "jwt expired") {
       signOut();
-      // Hapus token dari localStorage jika ada
-      // localStorage.removeItem("token");
-
-      // Sign out dari NextAuth
+      localStorage.removeItem("token");
     }
   }
+
+  if (axiosError.response?.status === 500 && axiosError.response?.data?.meta?.message.includes("E11000")) {
+    throw new Error("username or email already exist");
+  }
+
+  throw new Error(axiosError.response?.data?.meta?.message || "Something went wrong");
 };
 
 export { onErrorHandler };
