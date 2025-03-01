@@ -54,7 +54,7 @@ const Register = () => {
                       <span className="label-text">{t("gender")}</span>
                     </label>
                     <select {...field} className="select select-bordered w-full">
-                      <option disabled selected>
+                      <option disabled selected value={""}>
                         {t("select_gender")}
                       </option>
                       <option value={"male"}>{t("male")}</option>
