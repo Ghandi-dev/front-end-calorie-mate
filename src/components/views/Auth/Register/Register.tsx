@@ -12,7 +12,7 @@ const Register = () => {
 
   return (
     <div className="hero">
-      <div className="hero-content flex-col lg:flex-row-reverse p-0">
+      <div className="hero-content flex-col lg:flex-row-reverse p-2">
         <Image src="/images/logo-with-text.png" alt="register" width={500} height={500} className="w-[200px] lg:w-[500px]" />
         <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-xl">
           <form className={cn("flex flex-col card-body", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")} onSubmit={handleSubmit(handleRegister)}>
