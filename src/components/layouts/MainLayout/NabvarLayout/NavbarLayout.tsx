@@ -18,8 +18,10 @@ const NavbarLayout = () => {
       <div className="sticky top-0 z-50 bg-base-100 shadow-lg lg:hidden">
         <div className="navbar bg-primary text-base-100">
           <div className="flex-1">
-            <Image src="/images/logo.png" alt="logo" width={40} height={40} />
-            <a className="btn btn-ghost text-xl ">CalorieMate</a>
+            <div className="flex items-center gap-2">
+              <Image src="/images/logo.png" alt="logo" width={40} height={40} />
+              <a className="btn btn-ghost text-xl">CalorieMate</a>
+            </div>
           </div>
           <div className="flex item-center">
             <LanguageSwitcher />

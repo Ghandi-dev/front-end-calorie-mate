@@ -9,9 +9,6 @@ const useChangeUrl = () => {
   const currentLimit = router.query.limit;
   const currentPage = router.query.page;
   const currentSearch = router.query.search;
-  const currentCategory = router.query.category;
-  const currentIsOnline = router.query.isOnline;
-  const currentIsFeatured = router.query.isFeatured;
 
   const setUrl = () => {
     router.replace({
@@ -72,9 +69,6 @@ const useChangeUrl = () => {
     currentLimit,
     currentPage,
     currentSearch,
-    currentCategory,
-    currentIsOnline,
-    currentIsFeatured,
     setUrl,
     setUrlExplore,
     handleChangePage,

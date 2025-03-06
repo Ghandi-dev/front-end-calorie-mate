@@ -1,6 +1,7 @@
 {
   "dashboard": {
     "add": "Tambah",
+    "today_log": "Catatan Hari Ini",
     "greeting": "Selamat {time}, {name}",
     "description": "Di sini Anda dapat memantau asupan kalori harian dan aktivitas dengan mudah, sehingga Anda bisa tetap bugar dan sehat setiap hari.",
     "food": "Makanan",
@@ -71,6 +72,7 @@
     "register_here": "Daftar di sini",
     "create_account": "Buat akun",
     "name": "Nama",
+    "calories": "Kalori (Opsional)",
     "submit": "Kirim",
     "delete": "Hapus",
     "close": "Tutup",

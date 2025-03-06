@@ -1,6 +1,7 @@
 {
   "dashboard": {
     "add": "Add",
+    "today_log": "Today's Log",
     "greeting": "Good {time}, {name}",
     "description": "Here you can monitor your daily calorie intake and activities effortlessly, so you can stay fit and healthy every day.",
     "food": "Food",
@@ -74,6 +75,7 @@
     "register_here": "Register here",
     "create_account": "Create an account",
     "name": "Name",
+    "calories": "Calories (Optional)",
     "submit": "Submit",
     "delete": "Delete",
     "close": "Close",

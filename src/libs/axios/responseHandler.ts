@@ -12,7 +12,7 @@ const onErrorHandler = (error: Error) => {
     const errorName = axiosError.response?.data?.meta?.message;
 
     if (errorName === "jwt expired") {
-      signOut();
+      signOut({ callbackUrl: "/" });
       localStorage.removeItem("token");
     }
   }

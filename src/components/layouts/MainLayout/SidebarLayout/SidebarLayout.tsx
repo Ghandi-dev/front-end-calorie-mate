@@ -24,11 +24,11 @@ const SidebarLayout = () => {
   }
 
   return (
-    <aside className="w-64 h-full bg-white p-6 shadow-md hidden lg:flex flex-col gap-6">
+    <aside className="w-64 h-full bg-base-100 p-6 shadow-md hidden lg:flex flex-col gap-6">
       {/* Logo */}
       <div className="flex items-center gap-3">
         <Image src="/images/logo.png" alt="logo" width={50} height={50} />
-        <span className="text-xl font-bold text-neutral">CalorieMate</span>
+        <span className="text-xl font-bold text-content">CalorieMate</span>
       </div>
 
       {/* Profile Section */}
@@ -58,12 +58,13 @@ const SidebarLayout = () => {
           <Link
             key={index}
             href={item.href}
+            aria-disabled={router.pathname.includes(item.href)}
             className={cn("flex items-center gap-3 p-2 rounded-lg transition", {
-              "font-bold text-base-100 bg-primary": isMounted && router.pathname === item.href,
+              "font-bold text-base-100 bg-primary": isMounted && router.pathname.includes(item.href),
             })}
           >
             <span className="text-2xl">{item.icon}</span>
-            <span>{item.label}</span>
+            <span>{router.locale === "id" ? item.label.id : item.label.en}</span>
           </Link>
         ))}
       </nav>

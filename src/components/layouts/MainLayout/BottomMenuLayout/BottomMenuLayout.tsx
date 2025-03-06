@@ -8,9 +8,9 @@ import Image from "next/image";
 const BottomMenuLayout = () => {
   const router = useRouter();
   return (
-    <div className="btm-nav lg:hidden">
+    <div className="dock lg:hidden">
       {MENU_ITEMS.map((item, index) => (
-        <Link href={item.href} key={`menu-btn-${index}`} className={cn("", { "active text-primary": router.pathname === item.href })}>
+        <Link href={item.href} key={`menu-btn-${index}`} className={cn("", { "dock-active text-primary": router.pathname.includes(item.href) })}>
           <span className="text-xl">{item.icon}</span>
         </Link>
       ))}

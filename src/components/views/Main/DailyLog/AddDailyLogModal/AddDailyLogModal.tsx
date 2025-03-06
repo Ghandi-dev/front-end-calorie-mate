@@ -37,7 +37,7 @@ const AddDailyLogModal = (props: PropTypes) => {
     <Fragment>
       <div className="modal modal-open">
         <div className="modal-box">
-          <h1 className="text-xl text-neutral text-center font-bold">{t("title form daily")}</h1>
+          <h1 className="text-xl text-content text-center font-bold">{t("title form daily")}</h1>
           <form className={cn("flex flex-col mt-4", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")} onSubmit={handleSubmitForm(handleAddDailyLog)}>
             <Controller
               name="weight"

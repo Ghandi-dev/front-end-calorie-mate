@@ -72,7 +72,7 @@ const ChartDailyLog: React.FC<ChartDailyProps> = ({ data }) => {
     },
   };
 
-  return <div className="w-full h-96 p-4 bg-white shadow rounded-lg">{chartData ? <Line data={chartData} options={options} /> : <p>Loading chart...</p>}</div>;
+  return <div className="w-full h-96 p-4 bg-white shadow-sm rounded-lg">{chartData ? <Line data={chartData} options={options} /> : <p>Loading chart...</p>}</div>;
 };
 
 export default ChartDailyLog;

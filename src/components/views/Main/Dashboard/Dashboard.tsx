@@ -28,17 +28,16 @@ const Dashboard = () => {
     <div className="w-full p-4 lg:p-10 mb-16 lg:mb-0">
       <Breadcrumbs />
       <div className="flex flex-col 2xl:flex-row mt-4 gap-4">
-        <div className="card glass w-full xl:w-1/2">
+        <div className="card glass w-full 2xl:w-1/2">
           <div className="card-body p-2 lg:p-8">
-            <h1 className="card-title text-2xl text-neutral">{dataProfile && greeting(dataProfile?.fullname, router.locale ?? "en")}</h1>
+            <h1 className="card-title text-2xl text-content">{dataProfile && greeting(dataProfile?.fullname, router.locale ?? "en")}</h1>
             <p className="text-sm">{t("description")}</p>
             <ChartDaily data={formattedData} />
           </div>
         </div>
         <div className="card glass w-full 2xl:w-1/2">
           <div className="card-body p-2 lg:p-8">
-            <h1 className="card-title text-2xl text-neutral">{dataProfile && greeting(dataProfile?.fullname, router.locale ?? "en")}</h1>
-            <p className="text-sm">{t("description")}</p>
+            <h1 className="card-title text-2xl text-content">{t("today_log")}</h1>
             <div className="flex flex-col lg:flex-row gap-4 mt-4">
               <CardDaily isAdd={false} type="food" data={dataDailyLogToday?.data[0]?.food} isLoading={isLoadingDailyLogToday} />
               <CardDaily isAdd={false} type="activity" data={dataDailyLogToday?.data[0]?.activity} isLoading={isLoadingDailyLogToday} />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface PropTypes {
   dataRecipe: IRecipe;
@@ -25,7 +26,9 @@ const CardRecipe = (props: PropTypes) => {
         <div className="badge badge-outline">{dataRecipe?.nutrition?.fat} lemak</div>
       </div>
       <div className="card-body px-2 lg:px-8 pt-2">
-        <h1 className="card-title">{dataRecipe?.title}</h1>
+        <Link href={`/main/recipe/${dataRecipe?._id}`} className="card-title hover:text-primary">
+          {dataRecipe?.title}
+        </Link>
       </div>
     </div>
   );

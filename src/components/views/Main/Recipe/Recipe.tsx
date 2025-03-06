@@ -23,15 +23,15 @@ const Recipe = () => {
 
   const BottomContent = useMemo(() => {
     return (
-      <div className="flex items-center justify-between">
-        <select defaultValue="Pick a color" className="select" onChange={handleChangeLimit} value={currentLimit}>
+      <div className="flex items-center justify-between ">
+        <select defaultValue="Pick a color" className="select w-auto" onChange={handleChangeLimit} value={currentLimit}>
           {LIMIT_LIST.map((limit) => (
             <option key={limit.value} value={limit.value}>
               {limit.label}
             </option>
           ))}
         </select>
-        <div className="join">
+        <div>
           Page {currentPage} of {dataRecipe?.pagination?.totalPages}
         </div>
         {dataRecipe?.pagination?.totalPages > 1 && (
@@ -67,9 +67,13 @@ const Recipe = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:flex-row w-full gap-4 mt-2">
               {!isLoadingRecipe ? (
-                dataRecipe?.data.map((recipe: IRecipe) => <CardRecipe key={recipe._id} dataRecipe={recipe} />)
+                dataRecipe?.data.length > 0 ? (
+                  dataRecipe.data.map((recipe: IRecipe) => <CardRecipe key={recipe._id} dataRecipe={recipe} />)
+                ) : (
+                  <div className="text-center text-gray-500 col-span-2">Data tidak ditemukan</div>
+                )
               ) : (
-                <div className="skeleton w-full h-50"></div>
+                Array.from({ length: 4 }).map((_, i) => <div className="card w-full skeleton h-[410px]" key={i}></div>)
               )}
             </div>
             <div>{!isLoadingRecipe ? BottomContent : <div className="skeleton w-full h-10"></div>}</div>

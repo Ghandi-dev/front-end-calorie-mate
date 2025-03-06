@@ -9,6 +9,7 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
+  calories: yup.number().min(1, "Calories must be greater than 0"),
 });
 
 const useAddItem = (id: string) => {
@@ -41,22 +42,24 @@ const useAddItem = (id: string) => {
     },
   });
 
-  const handleAddFood = (data: { name: string }) => {
+  const handleAddFood = (data: { name: string; calories?: number }) => {
     const payload = {
       food: [
         {
           name: data.name,
+          calories: data.calories,
         },
       ],
     } as IDailyLog;
     mutateAddItem(payload);
   };
 
-  const handleAddActivity = (data: { name: string }) => {
+  const handleAddActivity = (data: { name: string; calories?: number }) => {
     const payload = {
       activity: [
         {
           name: data.name,
+          calories: data.calories,
         },
       ],
     } as IDailyLog;

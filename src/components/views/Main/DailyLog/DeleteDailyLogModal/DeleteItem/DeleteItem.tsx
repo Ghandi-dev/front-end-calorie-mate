@@ -31,7 +31,7 @@ const DeleteItem = (props: PropTypes) => {
     <div className="modal modal-open">
       <div className="modal-box">
         <div className="flex flex-col justify-center items-center gap-2">
-          <h1 className="text-xl text-neutral text-center font-bold capitalize">
+          <h1 className="text-xl text-content text-center font-bold capitalize">
             {t("delete")} {t(type)}
           </h1>
           <Image src="/images/warning.svg" alt="logo" width={100} height={100} />
