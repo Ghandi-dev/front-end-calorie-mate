@@ -1,5 +1,5 @@
 interface IIngredient {
-  quantity: number;
+  quantity: string;
   ingredient: string;
 }
 

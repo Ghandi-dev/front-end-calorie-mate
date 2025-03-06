@@ -12,16 +12,25 @@ const Breadcrumbs = () => {
   return (
     <div className="text-sm breadcrumbs glass p-4 xl:w-auto rounded-xl">
       <ul>
-        {pathSegments.map((segment, index) => {
-          const path = "/" + pathSegments.slice(0, index + 1).join("/"); // Buat URL berdasarkan segmen
-          return (
-            <li key={path}>
-              <Link href={path} className={cn({ "pointer-events-none text-primary": index === pathSegments.length - 1 })}>
-                <span className="capitalize">{decodeURIComponent(segment)}</span>
-              </Link>
-            </li>
-          );
-        })}
+        {pathSegments
+          .filter((_, index) => index !== 2) // Sembunyikan path ke-3
+          .map((segment, index, filteredSegments) => {
+            const path = "/" + pathSegments.slice(0, index + 1).join("/");
+            const isLastSegment = index === filteredSegments.length - 1; // Cek apakah ini segment terakhir
+
+            return (
+              <li key={path}>
+                <Link
+                  href={path}
+                  className={cn({
+                    "pointer-events-none text-primary": (isLastSegment && pathSegments.length !== 3) || (index === 1 && pathSegments.length === 3), // Segment ke-2 akan berwarna primary jika totalnya 3
+                  })}
+                >
+                  <span className="capitalize">{decodeURIComponent(segment)}</span>
+                </Link>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
