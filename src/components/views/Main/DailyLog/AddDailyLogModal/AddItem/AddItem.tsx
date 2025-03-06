@@ -52,7 +52,7 @@ const AddItem = (props: PropTypes) => {
                   <label className="label">
                     <span className="label-text">{t("name")}</span>
                   </label>
-                  <input {...field} type="number" className="input input-bordered w-full" />
+                  <input {...field} type="text" className="input input-bordered w-full" />
                   {errors.name && <p className="text-error">{errors.name.message}</p>}
                 </div>
               )}

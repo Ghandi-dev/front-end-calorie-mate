@@ -2,6 +2,7 @@ import { BUTTON_ITEMS } from "../LandingPageLayout.constants";
 import Image from "next/image";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import Link from "next/link";
+import ThemeChanger from "@/components/ui/ThemeChanger";
 
 const LandingPageLayoutNavbar = () => {
   return (
@@ -13,12 +14,13 @@ const LandingPageLayoutNavbar = () => {
             <a className="btn btn-ghost text-xl ">CalorieMate</a>
           </div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-4">
           <LanguageSwitcher />
+          <ThemeChanger />
           <ul className="menu menu-horizontal px-1">
             {BUTTON_ITEMS.map((item) => (
               <li key={item.label}>
-                <Link href={item.href} className="btn btn-sm btn-accent text-base-100 hover:bg-base-100 hover:text-secondary">
+                <Link href={item.href} className="btn btn-sm btn-accent text-accent-content ">
                   {item.label}
                 </Link>
               </li>

@@ -6,6 +6,7 @@ import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { LIMIT_LIST } from "@/constants/list.constants";
 import { cn } from "@/utils/cn";
+import { CiSearch } from "react-icons/ci";
 
 const Recipe = () => {
   const { isReady } = useRouter();
@@ -63,7 +64,10 @@ const Recipe = () => {
         <div className="card glass w-full ">
           <div className="card-body p-2 lg:p-8 ">
             <div className="flex items-center justify-end">
-              <input type="text" placeholder="Search Recipe" className="input input-bordered w-full md:max-w-xs" onChange={handleChangeSearch} />
+              <label className="input w-full lg:max-w-xs">
+                <CiSearch className="h-[1em] opacity-50" />
+                <input type="text" placeholder="Search Recipe" className="grow" onChange={handleChangeSearch} />
+              </label>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:flex-row w-full gap-4 mt-2">
               {!isLoadingRecipe ? (

@@ -8,14 +8,14 @@ export default function LanguageSwitcher() {
 
   const languages = [
     {
-      code: "en",
-      name: "English",
-      flag: "/images/flags/gb.svg", // path ke ikon bendera Inggris/UK
-    },
-    {
       code: "id",
       name: "Indonesia",
       flag: "/images/flags/id.svg", // path ke ikon bendera Indonesia
+    },
+    {
+      code: "en",
+      name: "English",
+      flag: "/images/flags/gb.svg", // path ke ikon bendera Inggris/UK
     },
   ];
 
@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
 
   return (
     <details className="dropdown dropdown-end w-full ">
-      <summary className="btn btn-ghost m-1 lg:w-full ">
+      <summary className="btn btn-ghost m-1 lg:w-full p-2">
         <div className="flex items-center gap-2">
           <div className="w-6 h-4 relative overflow-hidden rounded-sm">
             <Image src={activeLanguage.flag} alt={activeLanguage.name} layout="fill" objectFit="cover" />

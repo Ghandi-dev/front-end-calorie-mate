@@ -5,23 +5,12 @@ import { MENU_ITEMS } from "../MainLayout.constants";
 import { cn } from "@/utils/cn";
 import { useRouter } from "next/router";
 import useSidebarLayout from "./useSidebarLayout";
-import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import ThemeChanger from "@/components/ui/ThemeChanger";
 
 const SidebarLayout = () => {
   const router = useRouter();
   const { dataProfile, isLoadingProfile } = useSidebarLayout();
-
-  // State untuk memastikan komponen sudah dimuat di client
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true); // Set true setelah komponen dimuat di client
-  }, []);
-
-  if (!isMounted) {
-    return null; // Render nothing on the server
-  }
 
   return (
     <aside className="w-64 h-full bg-base-100 p-6 shadow-md hidden lg:flex flex-col gap-6">
@@ -33,19 +22,22 @@ const SidebarLayout = () => {
 
       {/* Profile Section */}
       <div className="text-center">
-        {isLoadingProfile ? (
+        {!isLoadingProfile ? (
           // Skeleton Avatar & Nama
-          <>
-            <div className="skeleton w-20 h-20 rounded-full mx-auto" suppressHydrationWarning></div>
-            <div className="skeleton h-4 w-32 mt-2 mx-auto" suppressHydrationWarning></div>
-          </>
-        ) : (
-          // Data Profil Sesungguhnya
           <>
             <Image src={dataProfile?.avatar || "/images/avatar-1.svg"} alt="profile" width={80} height={80} className="rounded-full mx-auto" />
             <p className="mt-2 font-semibold">{dataProfile?.fullname || "User Name"}</p>
-            <LanguageSwitcher />
+            <div className="flex gap-2">
+              <LanguageSwitcher />
+              <ThemeChanger />
+            </div>
           </>
+        ) : (
+          <>
+            <div className="skeleton w-20 h-20 rounded-full mx-auto"></div>
+            <div className="skeleton h-4 w-32 mt-2 mx-auto"></div>
+          </>
+          // Data Profil Sesungguhnya
         )}
       </div>
 
@@ -58,9 +50,8 @@ const SidebarLayout = () => {
           <Link
             key={index}
             href={item.href}
-            aria-disabled={router.pathname.includes(item.href)}
             className={cn("flex items-center gap-3 p-2 rounded-lg transition", {
-              "font-bold text-base-100 bg-primary": isMounted && router.pathname.includes(item.href),
+              "font-bold text-base-100 bg-primary": router.pathname.includes(item.href),
             })}
           >
             <span className="text-2xl">{item.icon}</span>

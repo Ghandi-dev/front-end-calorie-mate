@@ -9,7 +9,10 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  calories: yup.number().min(1, "Calories must be greater than 0"),
+  calories: yup
+    .number()
+    .typeError("Calories must be a number") // Jika input bukan angka
+    .min(1, "Calories must be greater than 0"), // Jika angka kurang dari 1
 });
 
 const useAddItem = (id: string) => {
