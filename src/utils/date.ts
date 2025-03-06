@@ -42,4 +42,8 @@ const convertTime = (isoDate: string) => {
   return `${date} WIB`;
 };
 
-export { toDateStandard, toInputDate, convertTime };
+const formatDate = (dateStr: string) => {
+  return new Date(dateStr).toLocaleDateString("id-ID", { day: "2-digit", month: "short" });
+};
+
+export { toDateStandard, toInputDate, convertTime, formatDate };

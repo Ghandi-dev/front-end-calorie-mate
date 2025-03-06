@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     locales: ["en", "id"], // Bahasa yang didukung
     defaultLocale: "en", // Bahasa default
   },
+  images: {
+    remotePatterns: [{ hostname: "www.masakapahariini.com", protocol: "https" }],
+  },
 };
 
 export default nextConfig;

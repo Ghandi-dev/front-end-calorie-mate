@@ -4,9 +4,11 @@ import Image from "next/image";
 import { cn } from "@/utils/cn";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Report = () => {
   const t = useTranslations("report");
+  const router = useRouter();
   const { dataReport, isLoadingDataReport, refetchDataReport, isRefetchingDataReport } = useReport();
   useEffect(() => {
     refetchDataReport();
@@ -27,7 +29,7 @@ const Report = () => {
               "text-center items-center justify-center text-gray-400": !dataReport || isLoadingDataReport,
             })}
           >
-            {dataReport ?? t("no_records")}
+            {router.locale === "id" ? dataReport?.id || t("no_records") : dataReport?.en || t("no_records")}
           </div>
         )}
       </div>

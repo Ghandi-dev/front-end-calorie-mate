@@ -6,8 +6,8 @@ import { BsJournal } from "react-icons/bs";
 const MENU_ITEMS = [
   { label: "Dashboard", href: "/main/dashboard", icon: <BiSolidDashboard /> },
   { label: "Daily Log", href: "/main/daily-log", icon: <BsJournal /> },
-  { label: "My Recipes", href: "/main/recipe", icon: <SlBookOpen /> },
   { label: "Report", href: "/main/report", icon: <TbReportAnalytics /> },
+  { label: "Food Recipes", href: "/main/recipe", icon: <SlBookOpen /> },
 ];
 
 export { MENU_ITEMS };
