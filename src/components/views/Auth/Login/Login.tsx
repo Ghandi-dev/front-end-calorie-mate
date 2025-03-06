@@ -16,7 +16,7 @@ const Login = () => {
         <Image src="/images/logo-with-text.png" alt="login" width={500} height={500} className="w-[200px] lg:w-[500px]" />
         <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-xl">
           <form className={cn("flex flex-col card-body", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")} onSubmit={handleSubmit(handleLogin)}>
-            <h2 className="text-3xl font-bold text-neutral text-center">{t("login")}</h2>
+            <h2 className="text-3xl font-bold text-content text-center">{t("login")}</h2>
             <Controller
               name="identifier"
               control={control}
@@ -38,9 +38,9 @@ const Login = () => {
                   <label className="label">
                     <span className="label-text">{t("password")}</span>
                   </label>
-                  <label className="input input-bordered flex items-center gap-2">
+                  <label className="input input-bordered flex items-center gap-2 w-full ">
                     <input {...field} type={isVisible ? "text" : "password"} className="grow w-full" placeholder={t("password")} />
-                    <button className="focus:outline-none" type="button" onClick={toggleVisibility}>
+                    <button className="focus:outline-hidden" type="button" onClick={toggleVisibility}>
                       {isVisible ? <FaEye className="text-xl text-default-400" /> : <FaEyeSlash className="text-xl text-default-400" />}
                     </button>
                   </label>

@@ -28,10 +28,10 @@ const DailyLog = () => {
   return (
     <div className="w-full p-4 lg:p-10 mb-16 lg:mb-0">
       <Breadcrumbs />
-      <div className="flex flex-col lg:flex-row mt-4 gap-4">
-        <div className="card glass w-full lg:w-1/2 ">
+      <div className="flex flex-col 2xl:flex-row mt-4 gap-4">
+        <div className="card glass w-full 2xl:w-1/2">
           <div className="card-body p-2 lg:p-8">
-            <h1 className="font-bold text-2xl text-neutral text-center">{t("description")}</h1>
+            <h1 className="font-bold text-2xl text-content text-center">{t("description")}</h1>
             {!isLoadingDailyLog ? (
               <DataPersonalCard data={dataDailyLog?.data[0]} openModal={openModal} isLoading={isLoadingDailyLog} />
             ) : (
@@ -64,7 +64,7 @@ const DailyLog = () => {
             </div>
           </div>
         </div>
-        <div className="card glass w-full lg:w-1/2">
+        <div className="card glass w-full 2xl:w-1/2">
           <div className="card-body p-2 lg:p-8">
             <h1 className="text-2xl font-bold text-center">{t("chart")}</h1>
             {!isLoadingDailyLog ? (

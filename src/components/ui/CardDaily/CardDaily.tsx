@@ -23,7 +23,7 @@ const CardDaily = (props: PropTypes) => {
     <Fragment>
       {!isLoading ? (
         <div className={cn("card shadow-lg w-full h-[365px] bg-base-100")}>
-          <div className="flex mx-8 mt-4 justify-between items-center">
+          <div className="flex mx-6 mt-4 justify-between items-center">
             <div className="flex gap-2 items-center">
               <h3 className="card-title capitalize">{t(type)}</h3>
               <Image src={`/images/${type}.svg`} alt={`${type} icon`} width={40} height={40} className="object-contain" />

@@ -16,7 +16,7 @@ const Register = () => {
         <Image src="/images/logo-with-text.png" alt="register" width={500} height={500} className="w-[200px] lg:w-[500px]" />
         <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-xl">
           <form className={cn("flex flex-col card-body", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")} onSubmit={handleSubmit(handleRegister)}>
-            <h2 className="text-3xl font-bold text-neutral text-center">{t("create_account")}</h2>
+            <h2 className="text-3xl font-bold text-content text-center">{t("create_account")}</h2>
             <Controller
               name="fullname"
               control={control}
@@ -95,7 +95,7 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">{t("email")}</span>
                   </label>
-                  <label className="input input-bordered flex items-center gap-2">
+                  <label className="input input-bordered flex items-center gap-2 w-full">
                     <input {...field} type="email" className="grow w-full" placeholder={t("email")} />
                   </label>
                   {errors.email && <p className="text-error">{errors.email.message}</p>}
@@ -110,9 +110,9 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">{t("password")}</span>
                   </label>
-                  <label className="input input-bordered flex items-center gap-2">
+                  <label className="input input-bordered flex items-center gap-2 w-full">
                     <input {...field} type={visiblePassword.password ? "text" : "password"} className="grow w-full" placeholder={t("password")} />
-                    <button className="focus:outline-none" type="button" onClick={() => handleVisiblePassword("password")}>
+                    <button className="focus:outline-hidden" type="button" onClick={() => handleVisiblePassword("password")}>
                       {visiblePassword.password ? <FaEye className="text-xl text-default-400" /> : <FaEyeSlash className="text-xl text-default-400" />}
                     </button>
                   </label>
@@ -128,14 +128,14 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">{t("confirm_password")}</span>
                   </label>
-                  <label className="input input-bordered flex items-center gap-2">
+                  <label className="input input-bordered flex items-center gap-2 w-full">
                     <input
                       {...field}
                       type={visiblePassword.confirmPassword ? "text" : "password"}
                       className="grow w-full"
                       placeholder={t("confirm_password")}
                     />
-                    <button className="focus:outline-none" type="button" onClick={() => handleVisiblePassword("confirmPassword")}>
+                    <button className="focus:outline-hidden" type="button" onClick={() => handleVisiblePassword("confirmPassword")}>
                       {visiblePassword.confirmPassword ? <FaEye className="text-xl text-default-400" /> : <FaEyeSlash className="text-xl text-default-400" />}
                     </button>
                   </label>

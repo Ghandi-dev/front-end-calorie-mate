@@ -23,7 +23,9 @@ instance.interceptors.request.use(
     }
     return request;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    onErrorHandler(error);
+  }
 );
 
 // Interceptors response (Menangani Error)

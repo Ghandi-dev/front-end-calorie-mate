@@ -39,7 +39,7 @@ const AddItem = (props: PropTypes) => {
     <Fragment>
       <div className="modal modal-open">
         <div className="modal-box">
-          <h1 className="text-xl text-neutral text-center font-bold capitalize">{t(type)}</h1>
+          <h1 className="text-xl text-content text-center font-bold capitalize">{t(type)}</h1>
           <form
             className={cn("flex flex-col mt-4", Object.keys(errors).length > 0 ? "gap-1" : "gap-4")}
             onSubmit={handleSubmitForm(type === "food" ? handleAddFood : handleAddActivity)}
@@ -54,6 +54,20 @@ const AddItem = (props: PropTypes) => {
                   </label>
                   <input {...field} type="text" className="input input-bordered w-full" />
                   {errors.name && <p className="text-error">{errors.name.message}</p>}
+                </div>
+              )}
+            />
+            <Controller
+              name="calories"
+              rules={{ required: true }}
+              control={control}
+              render={({ field }) => (
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">{t("calories")}</span>
+                  </label>
+                  <input {...field} type="text" className="input input-bordered w-full" />
+                  {errors.calories && <p className="text-error">{errors.calories.message}</p>}
                 </div>
               )}
             />

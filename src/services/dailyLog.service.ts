@@ -5,7 +5,7 @@ import { IDailyLog } from "@/types/DailyLog";
 const dailyLogServices = {
   getDailyLogs: () => instance.get(`${endpoint.DAILYLOG}`),
   getDailyLog: (id: string) => instance.get(`${endpoint.DAILYLOG}/${id}`),
-  getDailyLogByMember: (params: string) => instance.get(`${endpoint.DAILYLOG}-member?${params}`),
+  getDailyLogByMember: (params?: string) => instance.get(`${endpoint.DAILYLOG}-member?${params}`),
   getDailyLogReport: (params: string) => instance.get(`${endpoint.DAILYLOG}-report?${params}`),
   createDailyLog: (payload: IDailyLog) => instance.post(`${endpoint.DAILYLOG}`, payload),
   updateDailyLogPersonal: (id: string, payload: IDailyLog) => instance.put(`${endpoint.DAILYLOG}/${id}/personal`, payload),

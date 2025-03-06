@@ -4,10 +4,13 @@ import { useRouter } from "next/router";
 
 const Breadcrumbs = () => {
   const router = useRouter();
-  const pathSegments = router.asPath.split("/").filter(Boolean); // Pisahkan path dan hilangkan string kosong
+  const pathSegments = router.asPath
+    .split("?")[0] // Hilangkan query string
+    .split("/")
+    .filter(Boolean); // Pisahkan path dan hilangkan string kosong
 
   return (
-    <div className="text-sm breadcrumbs glass p-4 xl:w-1/4 rounded-xl">
+    <div className="text-sm breadcrumbs glass p-4 xl:w-auto rounded-xl">
       <ul>
         {pathSegments.map((segment, index) => {
           const path = "/" + pathSegments.slice(0, index + 1).join("/"); // Buat URL berdasarkan segmen

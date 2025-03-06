@@ -8,14 +8,14 @@ export default function LanguageSwitcher() {
 
   const languages = [
     {
-      code: "en",
-      name: "English",
-      flag: "/images/flags/gb.svg", // path ke ikon bendera Inggris/UK
-    },
-    {
       code: "id",
       name: "Indonesia",
       flag: "/images/flags/id.svg", // path ke ikon bendera Indonesia
+    },
+    {
+      code: "en",
+      name: "English",
+      flag: "/images/flags/gb.svg", // path ke ikon bendera Inggris/UK
     },
   ];
 
@@ -23,10 +23,10 @@ export default function LanguageSwitcher() {
   const activeLanguage = languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   return (
-    <details className="dropdown dropdown-end w-full">
-      <summary className="btn btn-ghost m-1 lg:w-full">
+    <details className="dropdown dropdown-end w-full ">
+      <summary className="btn btn-ghost m-1 lg:w-full p-2">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-4 relative overflow-hidden rounded">
+          <div className="w-6 h-4 relative overflow-hidden rounded-sm">
             <Image src={activeLanguage.flag} alt={activeLanguage.name} layout="fill" objectFit="cover" />
           </div>
           <h1 className="hidden lg:block">{activeLanguage.name}</h1>
@@ -46,15 +46,15 @@ export default function LanguageSwitcher() {
           </svg>
         </div>
       </summary>
-      <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-50">
+      <ul tabIndex={0} className="dropdown-content z-1 menu p-2 shadow-sm bg-base-100 rounded-box w-50">
         {languages.map((lang) => (
           <li key={lang.code}>
-            <Link href={{ pathname, query }} as={asPath} locale={lang.code} className={currentLocale === lang.code ? "active" : "text-neutral"}>
+            <Link href={{ pathname, query }} as={asPath} locale={lang.code} className={currentLocale === lang.code ? "active" : "text-content"}>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-4 relative overflow-hidden rounded">
+                <div className="w-6 h-4 relative overflow-hidden rounded-sm">
                   <Image src={lang.flag} alt={lang.name} layout="fill" objectFit="cover" />
                 </div>
-                <span>{lang.name}</span>
+                <span className="text-base-content">{lang.name}</span>
               </div>
             </Link>
           </li>

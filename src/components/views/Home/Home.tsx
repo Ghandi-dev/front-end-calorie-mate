@@ -18,7 +18,7 @@ const Home = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-              className="text-2xl md:text-5xl font-bold text-secondary"
+              className="text-2xl md:text-5xl font-bold text-accent"
             >
               {t("hero.title")}
             </motion.h1>
@@ -61,16 +61,16 @@ const Home = () => {
               className="text-left flex flex-col gap-4"
             >
               <h3 className="text-xl md:text-3xl text-primary font-bold">{t("whySection.feature1.title")}</h3>
-              <p className="text-neutral max-w-2xl">{t("whySection.feature1.description")}</p>
+              <p className="text-content max-w-2xl">{t("whySection.feature1.description")}</p>
 
               <h3 className="text-xl md:text-3xl text-primary font-bold">{t("whySection.feature2.title")}</h3>
-              <p className="text-neutral max-w-2xl">{t("whySection.feature2.description")}</p>
+              <p className="text-content max-w-2xl">{t("whySection.feature2.description")}</p>
 
               <h3 className="text-xl md:text-3xl text-primary font-bold">{t("whySection.feature3.title")}</h3>
-              <p className="text-neutral max-w-2xl">{t("whySection.feature3.description")}</p>
+              <p className="text-content max-w-2xl">{t("whySection.feature3.description")}</p>
 
               <h3 className="text-xl md:text-3xl text-primary font-bold">{t("whySection.feature4.title")}</h3>
-              <p className="text-neutral max-w-2xl">{t("whySection.feature4.description")}</p>
+              <p className="text-content max-w-2xl">{t("whySection.feature4.description")}</p>
             </motion.div>
           </div>
         </div>
@@ -94,7 +94,7 @@ const Home = () => {
             <div className="text-left">
               <h3 className="text-3xl text-primary font-bold">{t("stepsSection.step1.number")}</h3>
               <h4 className="text-xl font-semibold">{t("stepsSection.step1.title")}</h4>
-              <p className="text-neutral max-w-2xl">{t("stepsSection.step1.description")}</p>
+              <p className="text-content max-w-2xl">{t("stepsSection.step1.description")}</p>
             </div>
           </motion.div>
 
@@ -112,7 +112,7 @@ const Home = () => {
             <div className="text-left">
               <h3 className="text-3xl text-primary font-bold">{t("stepsSection.step2.number")}</h3>
               <h4 className="text-xl font-semibold">{t("stepsSection.step2.title")}</h4>
-              <p className="text-neutral max-w-2xl">{t("stepsSection.step2.description")}</p>
+              <p className="text-content max-w-2xl">{t("stepsSection.step2.description")}</p>
             </div>
           </motion.div>
 
@@ -130,7 +130,7 @@ const Home = () => {
             <div className="text-left">
               <h3 className="text-3xl text-primary font-bold">{t("stepsSection.step3.number")}</h3>
               <h4 className="text-xl font-semibold">{t("stepsSection.step3.title")}</h4>
-              <p className="text-neutral max-w-2xl">{t("stepsSection.step3.description")}</p>
+              <p className="text-content max-w-2xl">{t("stepsSection.step3.description")}</p>
             </div>
           </motion.div>
         </div>
